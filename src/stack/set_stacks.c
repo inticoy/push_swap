@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raise_error.c                                      :+:      :+:    :+:   */
+/*   set_stacks.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 15:34:31 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/18 14:34:57 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/19 15:54:40 by gyoon             #+#    #+#             */
+/*   Updated: 2023/02/19 16:29:22 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
+#include "push_swap.h"
 
-void	raise_error(char *msg)
+t_stacks	set_stacks(int argc, char **argv)
 {
-	ft_putstr_fd(msg, 2);
-	exit(1);
+	t_stacks	stacks;
+
+	stacks = init_stacks();
+	stacks.a = set_stack_a(argc, argv);
+	stacks.b = set_stack_b(ft_lstsize(stacks.a));
+	return (stacks);
 }

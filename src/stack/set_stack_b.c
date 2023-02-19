@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   set_stack_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 15:31:15 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/19 19:27:17 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/19 19:10:10 by gyoon             #+#    #+#             */
+/*   Updated: 2023/02/19 19:13:03 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+t_list	*set_stack_b(int size)
 {
-	t_stacks	stacks;
+	t_list	*head;
+	t_list	*node;
+	int		i;
 
-	if (argc == 1)
-		return (0);
-	stacks = set_stacks(argc, argv);
-	while (stacks.a)
+	head = 0;
+	i = 0;
+	while (i < size)
 	{
-		ft_printf("%d\n", ((t_stack_data *)(stacks.a->content))->number);
-		stacks.a = stacks.a->next;
+		node = ft_lstnew(new_stack_data());
+		ft_lstadd_back(&head, node);
+		i++;
 	}
-	return (0);
+	return (head);
 }
