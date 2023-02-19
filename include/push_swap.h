@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/19 19:13:56 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/19 20:04:48 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_stack_data
 {
 	int	number;
 }	t_stack_data;
+
+t_bool			validate_argument(int argc, char **argv);
 
 void			raise_error(char *msg);
 

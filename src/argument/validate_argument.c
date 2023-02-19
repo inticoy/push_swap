@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_stack_b.c                                      :+:      :+:    :+:   */
+/*   validate_argument.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 19:10:10 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/19 20:14:21 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/19 19:49:29 by gyoon             #+#    #+#             */
+/*   Updated: 2023/02/19 20:15:32 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "push_swap.h"
 
-t_list	*set_stack_b(int size)
+t_bool	validate_argument(int argc, char **argv)
 {
-	t_list	*head;
-	t_list	*node;
-	int		i;
+	int	i;
+	int	j;
 
-	head = 0;
-	i = 0;
-	while (i < size)
+	i = 1;
+	while (i < argc)
 	{
-		node = ft_lstnew(new_stack_data());
-		ft_lstadd_back(&head, node);
+		while (*argv[i])
+		{
+			if (('0' <= *argv[i] && *argv[i] <= '9') || *argv[i] == ' ')
+				return (ft_false);
+		}
 		i++;
 	}
-	return (head);
+	return (ft_true);
 }
