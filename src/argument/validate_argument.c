@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:49:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/19 20:15:32 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/19 20:24:28 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ t_bool	validate_argument(int argc, char **argv)
 	{
 		while (*argv[i])
 		{
-			if (('0' <= *argv[i] && *argv[i] <= '9') || *argv[i] == ' ')
-				return (ft_false);
+			/* if (('0' <= *argv[i] && *argv[i] <= '9') || *argv[i] == ' ')
+				return (ft_false); */
+			argv[i]++;
 		}
 		i++;
 	}
