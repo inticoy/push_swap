@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   set_stack_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:27:01 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/19 20:14:04 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/20 17:30:03 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
+#include <stdlib.h>
 
 static char	*skip_digits(char *str)
 {
@@ -24,7 +26,9 @@ static t_list	*argv_to_nodes(char *arg)
 	t_list	*head;
 	t_list	*node;
 
-	head = 0;
+	if (!*arg)
+		return (FT_NULL);
+	head = FT_NULL;
 	while (*arg)
 	{
 		if (*arg == ' ')
@@ -36,6 +40,11 @@ static t_list	*argv_to_nodes(char *arg)
 		((t_stack_data *)node->content)->number = ft_atoi(arg);
 		ft_lstadd_back(&head, node);
 		arg = skip_digits(arg);
+		if (*arg != ' ' || !*arg)
+		{
+			ft_lstclear(&head, ft_free_s);
+			return (FT_NULL);
+		}
 	}
 	return (head);
 }
@@ -50,6 +59,8 @@ t_list	*set_stack_a(int argc, char **argv)
 	while (i < argc)
 	{
 		node = argv_to_nodes(argv[i]);
+		if (!node)
+			// do sth
 		ft_lstadd_back(&head, node);
 		i++;
 	}
