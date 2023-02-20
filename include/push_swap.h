@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/19 20:04:48 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/20 13:44:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void			raise_error(char *msg);
 
 t_stacks		init_stacks(void);
 t_stack_data	*new_stack_data(void);
+void			print_stacks(t_stacks stacks);
 t_list			*set_stack_a(int argc, char **argv);
 t_list			*set_stack_b(int size);
 t_stacks		set_stacks(int argc, char **argv);
