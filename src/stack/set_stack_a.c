@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_stack_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:27:01 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/20 23:34:33 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/21 14:20:44 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,11 @@ t_list	*set_stack_a(int argc, char **argv)
 	while (i < argc)
 	{
 		node = argv_to_nodes(argv[i]);
-		/* if (node == FT_NULL)
+		if (!node)
 		{
-			ft_printf("Hello\n");
 			ft_lstclear(&head, ft_free_s);
 			return (FT_NULL);
-		} */
+		}
 		ft_lstadd_back(&head, node);
 		i++;
 	}
