@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:15 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/20 23:26:59 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/21 14:48:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	stacks = set_stacks(argc, argv);
-	if (!stacks.a || !stacks.b)
+	if (!stacks.a)
 		raise_error("Error\n");
-	print_stacks(stacks);
 	print_stacks(stacks);
 	return (0);
 }
