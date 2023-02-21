@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rotate_ab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 15:31:15 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 16:16:25 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/21 16:13:58 by gyoon             #+#    #+#             */
+/*   Updated: 2023/02/21 16:14:25 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	rotate_ab(t_stacks *stacks)
 {
-	t_stacks	stacks;
-
-	if (argc == 1)
-		return (0);
-	stacks = set_stacks(argc, argv);
-	if (!stacks.a)
-		raise_error("Error\n");
-	print_stacks(stacks);
-	rotate_a(&stacks);
-	print_stacks(stacks);
-	rotate_a(&stacks);
-	print_stacks(stacks);
-	return (0);
+	rotate_a(stacks);
+	rotate_b(stacks);
 }
