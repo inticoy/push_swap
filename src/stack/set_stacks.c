@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:54:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 15:11:44 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/21 16:56:01 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static t_bool	has_duplication(t_list *head)
 	while (head)
 	{
 		node = head->next;
-		head_num = ((t_stack_data *)head->content)->number;
+		head_num = *(int *)head->content;
 		while (node)
 		{
-			if (((t_stack_data *)node->content)->number == head_num)
+			if (*(int *)node->content == head_num)
 				return (ft_true);
 			node = node->next;
 		}

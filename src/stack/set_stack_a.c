@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:27:01 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 14:20:44 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/21 16:54:39 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@ static char	*skip_digits(char *str)
 
 static void	test(t_list **head, char *arg)
 {
+	int		*content;
 	t_list	*node;
 	int		number;
 	char	*str;
 
-	node = ft_lstnew(new_stack_data());
+	content = ft_calloc(1, sizeof(int));
 	number = ft_atoi(arg);
-	((t_stack_data *)node->content)->number = number;
+	*content = number;
+	node = ft_lstnew(content);
 	str = ft_itoa(number);
 	if (!ft_strncmp(arg, str, ft_strlen(str)))
 		ft_lstadd_back(head, node);

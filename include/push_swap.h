@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 16:36:29 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/21 16:51:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ typedef struct s_stacks
 	t_list	*b;
 }	t_stacks;
 
-typedef struct s_stack_data
-{
-	int	number;
-}	t_stack_data;
-
 void			push_a(t_stacks *stacks);
 void			push_b(t_stacks *stacks);
 void			rev_rotate_a(t_stacks *stacks);
@@ -43,7 +38,6 @@ void			swap_ab(t_stacks *stacks);
 void			raise_error(char *msg);
 
 t_stacks		init_stacks(void);
-t_stack_data	*new_stack_data(void);
 void			print_stacks(t_stacks stacks);
 t_list			*set_stack_a(int argc, char **argv);
 t_list			*set_stack_b(int size);
