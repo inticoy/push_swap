@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/20 13:44:16 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/21 15:52:55 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ typedef struct s_stack_data
 	int	number;
 }	t_stack_data;
 
-t_bool			validate_argument(int argc, char **argv);
+void			push_a(t_stacks *stacks);
+void			push_b(t_stacks *stacks);
+void			swap_a(t_stacks *stacks);
+void			swap_b(t_stacks *stacks);
+void			swap_ab(t_stacks *stacks);
 
 void			raise_error(char *msg);
 

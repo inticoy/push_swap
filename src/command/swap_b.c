@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 15:31:15 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 15:51:55 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/21 15:45:26 by gyoon             #+#    #+#             */
+/*   Updated: 2023/02/21 15:53:47 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	swap_b(t_stacks *stacks)
 {
-	t_stacks	stacks;
+	t_list	*temp;
 
-	if (argc == 1)
-		return (0);
-	stacks = set_stacks(argc, argv);
-	if (!stacks.a)
-		raise_error("Error\n");
-	print_stacks(stacks);
-	swap_a(&stacks);
-	print_stacks(stacks);
-	swap_a(&stacks);
-	print_stacks(stacks);
-	return (0);
+	if (!stacks->b || !stacks->b->next)
+		return ;
+	temp = stacks->b->next->next;
+	stacks->b->next->next = stacks->b;
+	stacks->b = stacks->b->next;
+	stacks->b->next->next = temp;
 }

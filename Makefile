@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/02/21 15:13:21 by gyoon            ###   ########.fr        #
+#    Updated: 2023/02/21 15:54:36 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ RM = rm -rf
 # CFLAGS = -Wall -Wextra -Werror
 
 SRCS = $(addprefix src/, \
+		command/push_a.c command/push_b.c command/swap_a.c command/swap_ab.c command/swap_b.c \
 		error/raise_error.c \
 		stack/init_stacks.c stack/new_stack_data.c stack/print_stacks.c stack/set_stack_a.c stack/set_stacks.c \
 		main.c)
