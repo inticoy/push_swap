@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 16:15:01 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/21 16:28:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ typedef struct s_stack_data
 
 void			push_a(t_stacks *stacks);
 void			push_b(t_stacks *stacks);
+void			rev_rotate_a(t_stacks *stacks);
+void			rev_rotate_ab(t_stacks *stacks);
+void			rev_rotate_b(t_stacks *stacks);
 void			rotate_a(t_stacks *stacks);
 void			rotate_ab(t_stacks *stacks);
 void			rotate_b(t_stacks *stacks);
