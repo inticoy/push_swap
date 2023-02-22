@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 16:51:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/22 16:55:08 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void			swap_b(t_stacks *stacks);
 void			swap_ab(t_stacks *stacks);
 
 void			raise_error(char *msg);
+
+void			sort_stacks(t_stacks stacks);
 
 t_stacks		init_stacks(void);
 void			print_stacks(t_stacks stacks);

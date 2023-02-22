@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+         #
+#    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/02/21 19:32:06 by gyoon            ###   ########.fr        #
+#    Updated: 2023/02/22 17:02:40 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = $(addprefix src/, \
 		command/rotate_a.c command/rotate_ab.c command/rotate_b.c \
 		command/swap_a.c command/swap_ab.c command/swap_b.c \
 		error/raise_error.c \
+		sort/sort_stacks.c \
 		stack/init_stacks.c stack/print_stacks.c stack/set_stack_a.c stack/set_stacks.c \
 		main.c)
 OBJS = $(SRCS:.c=.o)
