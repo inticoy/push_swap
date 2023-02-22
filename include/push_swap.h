@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/22 16:55:08 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/22 21:57:01 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,25 @@
 
 # define STDERR 2
 
+/* typedef enum e_order
+{
+	desc,
+	asc
+}	t_order; */
+
 typedef struct s_stacks
 {
 	t_list	*a;
 	t_list	*b;
 }	t_stacks;
+
+typedef struct s_divide_info
+{
+	int		level;
+	int		part;
+	int		*arr;
+	char	*order;
+}	t_divide_info;
 
 void			push_a(t_stacks *stacks);
 void			push_b(t_stacks *stacks);
