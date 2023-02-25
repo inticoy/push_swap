@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:45:26 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 15:54:18 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 18:53:36 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ void	swap_ab(t_stacks *stacks)
 {
 	swap_a(stacks);
 	swap_b(stacks);
+	//ft_printf("ss\n");
 }

@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:45:26 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 15:51:28 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 18:53:30 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	swap_a(t_stacks *stacks)
 	stacks->a->next->next = stacks->a;
 	stacks->a = stacks->a->next;
 	stacks->a->next->next = temp;
+	ft_printf("sa\n");
 }

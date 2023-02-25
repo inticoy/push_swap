@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:17:41 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 16:29:33 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 18:53:08 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	rev_rotate_b(t_stacks *stacks)
 	temp = node->next;
 	node->next = FT_NULL;
 	ft_lstadd_front(&stacks->b, temp);
+	ft_printf("rrb\n");
 }
