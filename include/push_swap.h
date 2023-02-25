@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 15:19:12 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 18:09:45 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ typedef struct s_div_info
 	t_order	*orders;
 }	t_div_info;
 
+typedef struct s_merge_info
+{
+	int		a;
+	int		b;
+	int		c;
+	t_order	order;
+}	t_merge_info;
+
 void			push_a(t_stacks *stacks);
 void			push_b(t_stacks *stacks);
 void			rev_rotate_a(t_stacks *stacks);
@@ -58,6 +66,10 @@ t_order			*set_order(int part, int level);
 
 void			sort_stacks(t_stacks *stacks);
 
+int				get_a_top(t_stacks *stacks);
+int				get_b_top(t_stacks *stacks);
+int				get_a_bottom(t_stacks *stacks);
+int				get_b_bottom(t_stacks *stacks);
 t_stacks		init_stacks(void);
 void			print_stacks(t_stacks stacks);
 t_list			*set_stack_a(int argc, char **argv);
