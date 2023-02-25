@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 14:57:26 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 15:22:01 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,17 @@ static void	pre_sort(t_stacks *stacks, t_order order)
 
 	x = *((int *)stacks->a->content);
 	y = *((int *)stacks->a->next->content);
+	ft_printf("%d", order);
 	if (order)
 	{
 		if (x > y)
 		{
-			swap_a(stacks);
 			push_b(stacks);
 			push_b(stacks);
 		}
 		else
 		{
+			swap_a(stacks);
 			push_b(stacks);
 			push_b(stacks);
 		}
@@ -38,12 +39,12 @@ static void	pre_sort(t_stacks *stacks, t_order order)
 	{
 		if (x > y)
 		{
+			swap_a(stacks);
 			push_b(stacks);
 			push_b(stacks);
 		}
 		else
 		{
-			swap_a(stacks);
 			push_b(stacks);
 			push_b(stacks);
 		}
@@ -73,4 +74,5 @@ void	sort_stacks(t_stacks *stacks)
 	info = get_div_info(total);
 	preprocess(stacks, info);
 	print_stacks(*stacks);
+	print_orders(info.orders, info.part);
 }
