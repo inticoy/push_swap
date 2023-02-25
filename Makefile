@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/02/22 17:02:40 by gyoon            ###   ########.fr        #
+#    Updated: 2023/02/25 14:17:02 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ SRCS = $(addprefix src/, \
 		command/rev_rotate_a.c command/rev_rotate_ab.c command/rev_rotate_b.c\
 		command/rotate_a.c command/rotate_ab.c command/rotate_b.c \
 		command/swap_a.c command/swap_ab.c command/swap_b.c \
+		division/get_div_info.c \
 		error/raise_error.c \
+		math/power.c \
+		order/set_order.c \
 		sort/sort_stacks.c \
 		stack/init_stacks.c stack/print_stacks.c stack/set_stack_a.c stack/set_stacks.c \
 		main.c)
@@ -44,7 +47,8 @@ endif
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(F_OBJS)
-	$(CC) -L./libft $(SRCS) -lft -I $(INCLUDE) -o $@  -fsanitize=address
+	$(CC) -L./libft $(SRCS) -lft -I $(INCLUDE) -o $@  
+# -fsanitize=address
 
 bonus :
 	make BONUS=1 all

@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   set_order.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 15:31:15 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 13:53:32 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/25 14:16:22 by gyoon             #+#    #+#             */
+/*   Updated: 2023/02/25 14:19:22 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libmath.h"
 #include "push_swap.h"
 
-t_order	*set_order(int part, int level);
-void	get_section(int size);
-
-int	main(int argc, char **argv)
+t_order	*set_order(int part, int level)
 {
-	t_stacks	stacks;
+	t_order	*order;
+	int		i;
+	int		j;
 
-	if (argc == 1)
-		return (0);
-	stacks = set_stacks(argc, argv);
-	if (!stacks.a)
-		raise_error("Error\n");
-	//sort_stacks(stacks);
-	//get_section(100);
-	
-	t_order	*test = set_order(27, 3);
-	for (int i = 0; i < 27; i++)
+	order = (t_order *)ft_calloc(part, sizeof(t_order));
+	if (!order)
+		return (FT_NULL);
+	order[0] = asc;
+	i = 0;
+	while (i < level)
 	{
-		ft_printf("%d", test[i]);
+		j = 0;
+		while (j < power(3, i))
+		{
+			order[(power(3, i) * 2 - 1) - j] = !order[j];
+			order[(power(3, i) * 3 - 1) - j] = !order[j];
+			j++;
+		}
+		i++;
 	}
-
-
-	return (0);
+	return (order);
 }

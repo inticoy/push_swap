@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/22 21:57:01 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 14:18:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 # define STDERR 2
 
-/* typedef enum e_order
+typedef enum e_order
 {
 	desc,
 	asc
-}	t_order; */
+}	t_order;
 
 typedef struct s_stacks
 {
@@ -29,13 +29,13 @@ typedef struct s_stacks
 	t_list	*b;
 }	t_stacks;
 
-typedef struct s_divide_info
+typedef struct s_div_info
 {
 	int		level;
 	int		part;
-	int		*arr;
-	char	*order;
-}	t_divide_info;
+	char	*elements;
+	t_order	*orders;
+}	t_div_info;
 
 void			push_a(t_stacks *stacks);
 void			push_b(t_stacks *stacks);
@@ -49,7 +49,11 @@ void			swap_a(t_stacks *stacks);
 void			swap_b(t_stacks *stacks);
 void			swap_ab(t_stacks *stacks);
 
+t_div_info		get_div_info(int size);
+
 void			raise_error(char *msg);
+
+t_order			*set_order(int part, int level);
 
 void			sort_stacks(t_stacks stacks);
 
