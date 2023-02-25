@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 14:18:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 14:46:34 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void			raise_error(char *msg);
 
 t_order			*set_order(int part, int level);
 
-void			sort_stacks(t_stacks stacks);
+void			sort_stacks(t_stacks *stacks);
 
 t_stacks		init_stacks(void);
 void			print_stacks(t_stacks stacks);
