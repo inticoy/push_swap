@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:15 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 13:53:32 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 15:05:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,6 @@ int	main(int argc, char **argv)
 	stacks = set_stacks(argc, argv);
 	if (!stacks.a)
 		raise_error("Error\n");
-	//sort_stacks(stacks);
-	//get_section(100);
-	
-	t_order	*test = set_order(27, 3);
-	for (int i = 0; i < 27; i++)
-	{
-		ft_printf("%d", test[i]);
-	}
-
-
+	sort_stacks(&stacks);
 	return (0);
 }

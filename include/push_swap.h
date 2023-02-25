@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 14:46:34 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 15:19:12 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ t_div_info		get_div_info(int size);
 
 void			raise_error(char *msg);
 
+void			print_orders(t_order *orders, int len);
 t_order			*set_order(int part, int level);
 
 void			sort_stacks(t_stacks *stacks);
