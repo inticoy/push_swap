@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 13:40:16 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 16:51:24 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 14:58:35 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	print_stacks(t_stacks stacks)
 	ft_printf("[stack B] : ");
 	while (stacks.b)
 	{
-		ft_printf("%d ", *(int *)stacks.a->content);
+		ft_printf("%d ", *(int *)stacks.b->content);
 		stacks.b = stacks.b->next;
 	}
 	ft_printf("\n");
