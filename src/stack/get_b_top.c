@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:08:02 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 18:08:12 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 18:17:43 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 int	get_b_top(t_stacks *stacks)
 {
-	return (((int *)stacks->b->content));
+	return (*((int *)stacks->b->content));
 }
