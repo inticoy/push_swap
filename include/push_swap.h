@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 19:10:35 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 21:34:20 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef enum e_order
 
 typedef struct s_stacks
 {
+	int		num;
 	t_list	*a;
 	t_list	*b;
 }	t_stacks;
@@ -63,6 +64,7 @@ t_div_info		update_div_info(t_div_info old);
 void			raise_error(char *msg);
 
 void			print_orders(t_order *orders, int len);
+void			reverse_orders(t_order *orders, int len);
 t_order			*set_order(int part, int level);
 
 void			sort_stacks(t_stacks *stacks);

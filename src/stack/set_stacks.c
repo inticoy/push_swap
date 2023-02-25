@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:54:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 14:52:18 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 21:34:56 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ t_stacks	set_stacks(int argc, char **argv)
 	if (has_duplication(stacks.a))
 		ft_lstclear(&stacks.a, ft_free_s);
 	stacks.b = FT_NULL;
+	stacks.num = ft_lstsize(stacks.a);
 	return (stacks);
 }

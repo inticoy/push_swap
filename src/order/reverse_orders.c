@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   reverse_orders.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 15:31:15 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 20:49:52 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/25 19:21:32 by gyoon             #+#    #+#             */
+/*   Updated: 2023/02/25 19:26:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 
-t_order	*set_order(int part, int level);
-void	get_section(int size);
-
-int	main(int argc, char **argv)
+void	reverse_orders(t_order *orders, int len)
 {
-	t_stacks	stacks;
+	int	i;
 
-	if (argc == 1)
-		return (0);
-	stacks = set_stacks(argc, argv);
-	if (!stacks.a)
-		raise_error("Error\n");
-	sort_stacks(&stacks);
-	return (0);
+	i = 0;
+	while (i < len)
+	{
+		orders[i] = !orders[i];
+		i++;
+	}
 }
