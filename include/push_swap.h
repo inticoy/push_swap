@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 18:09:45 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 19:10:35 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_div_info
 {
 	int		level;
 	int		part;
-	char	*elements;
+	int		*elements;
 	t_order	*orders;
 }	t_div_info;
 
@@ -58,6 +58,7 @@ void			swap_b(t_stacks *stacks);
 void			swap_ab(t_stacks *stacks);
 
 t_div_info		get_div_info(int size);
+t_div_info		update_div_info(t_div_info old);
 
 void			raise_error(char *msg);
 

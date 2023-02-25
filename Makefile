@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/02/25 18:29:40 by gyoon            ###   ########.fr        #
+#    Updated: 2023/02/25 18:45:39 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = $(addprefix src/, \
 		command/rev_rotate_a.c command/rev_rotate_ab.c command/rev_rotate_b.c\
 		command/rotate_a.c command/rotate_ab.c command/rotate_b.c \
 		command/swap_a.c command/swap_ab.c command/swap_b.c \
-		division/get_div_info.c \
+		division/get_div_info.c division/update_div_info.c \
 		error/raise_error.c \
 		math/power.c math/max_i.c math/min_i.c\
 		order/print_orders.c order/set_order.c \

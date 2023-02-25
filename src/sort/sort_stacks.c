@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 18:37:33 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/25 19:11:41 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	preprocess(t_stacks *stacks, t_div_info info)
 	}
 }
 
-static int	arr_sum(char *elements, int len)
+static int	arr_sum(int *elements, int len)
 {
 	int	i;
 	int	sum;
@@ -212,6 +212,113 @@ static void	merge_to_a(t_stacks *stacks, t_div_info info)
 	}
 }
 
+static void	merge_to_b(t_stacks *stacks, t_div_info info)
+{
+	int	pb;
+	int	i;
+
+	pb = arr_sum(info.elements + (info.part / 3) * 2, info.part / 3);
+	i = 0;
+	while (i < pb)
+	{
+		push_b(stacks);
+		i++;
+	}
+	i = 0;
+	while (i < info.part / 3)
+	{
+		t_merge_info	minfo;
+		int				idx;
+
+		minfo.a = info.elements[i];
+		minfo.b = info.elements[(info.part / 3) * 2 - 1 - i];
+		minfo.c = info.elements[info.part - 1 - i];
+		minfo.order = info.orders[i];
+
+		if (minfo.order) // is asc->find biggest
+		{
+			while (minfo.a || minfo.b || minfo.c)
+			{
+				if (!minfo.a)
+				{
+					if (!minfo.b)
+						idx = 2;
+					else
+						idx = max_i(get_a_top(stacks), get_b_bottom(stacks)) + 1;
+				}
+				else
+				{
+					if (!minfo.b && !minfo.c)
+						idx = 0;
+					else if (!minfo.b)
+						idx = max_i(get_a_bottom(stacks), get_b_bottom(stacks));
+					else if (!minfo.c)
+						idx = max_i(get_a_bottom(stacks), get_a_top(stacks));
+					else
+						idx = max_3(get_a_bottom(stacks), get_a_top(stacks), get_b_bottom(stacks));
+				}
+				if (idx == 0)
+				{
+					rev_rotate_a(stacks);
+					push_b(stacks);
+					minfo.a--;
+				}
+				else if (idx == 1)
+				{
+					push_b(stacks);
+					minfo.b--;
+				}
+				else if (idx == 2)
+				{
+					rev_rotate_b(stacks);
+					minfo.c--;
+				}
+			}
+		}
+		else
+		{
+			while (minfo.a || minfo.b || minfo.c)
+			{
+				if (!minfo.a)
+				{
+					if (!minfo.b)
+						idx = 2;
+					else
+						idx = min_i(get_a_top(stacks), get_b_bottom(stacks)) + 1;
+				}
+				else
+				{
+					if (!minfo.b && !minfo.c)
+						idx = 0;
+					else if (!minfo.b)
+						idx = min_i(get_a_bottom(stacks), get_b_bottom(stacks));
+					else if (!minfo.c)
+						idx = min_i(get_a_bottom(stacks), get_a_top(stacks));
+					else
+						idx = min_3(get_a_bottom(stacks), get_a_top(stacks), get_b_bottom(stacks));
+				}
+				if (idx == 0)
+				{
+					rev_rotate_a(stacks);
+					push_b(stacks);
+					minfo.a--;
+				}
+				else if (idx == 1)
+				{
+					push_b(stacks);
+					minfo.b--;
+				}
+				else if (idx == 2)
+				{
+					rev_rotate_b(stacks);
+					minfo.c--;
+				}
+			}
+		}
+		i++;
+	}
+}
+
 void	sort_stacks(t_stacks *stacks)
 {
 	t_div_info	info;
@@ -221,12 +328,25 @@ void	sort_stacks(t_stacks *stacks)
 	info = get_div_info(total);
 	preprocess(stacks, info);
 
-	ft_printf("\nAFTER PREPROCESSING\n");
-	print_stacks(*stacks);
+	// ft_printf("\nAFTER PREPROCESSING\n");
+	// print_stacks(*stacks);
+
+	merge_to_a(stacks, info);
+	info = update_div_info(info);
+
+	merge_to_b(stacks, info);
+	info = update_div_info(info);
+
+	merge_to_a(stacks, info);
+	info = update_div_info(info);
+
+	merge_to_b(stacks, info);
+	info = update_div_info(info);
 
 	merge_to_a(stacks, info);
 
-	ft_printf("\nAFTER MERGE\n");
-	print_stacks(*stacks);
-	print_orders(info.orders, info.part);
+
+	// ft_printf("\nAFTER MERGE\n");
+	// print_stacks(*stacks);
+	// print_orders(info.orders, info.part);
 }

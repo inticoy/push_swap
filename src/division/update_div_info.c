@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_div_info.c                                     :+:      :+:    :+:   */
+/*   update_div_info.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 14:11:16 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 19:10:43 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/25 18:39:36 by gyoon             #+#    #+#             */
+/*   Updated: 2023/02/25 19:10:50 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libmath.h"
+#include "libft.h"
 #include "push_swap.h"
 
-t_div_info	get_div_info(int size)
+t_div_info	update_div_info(t_div_info old)
 {
 	t_div_info	info;
-	int			q;
-	int			r;
 	int			i;
 
-	info.level = 1;
-	info.part = 3;
-	while (size / info.part >= 6)
-	{
-		info.level++;
-		info.part *= 3;
-	}
-	q = size / info.part;
-	r = size % info.part;
+	info.level = old.level - 1;
+	info.part = old.part / 3;
 	info.elements = (int *)ft_calloc(info.part, sizeof(int));
 	i = 0;
-	while (i < info.part - r)
-		info.elements[i++] = q;
 	while (i < info.part)
-		info.elements[i++] = q + 1;
-	info.orders = set_order(info.part, info.level);
+	{
+		info.elements[i] = old.elements[i] + old.elements[(old.part / 3) * 2 - 1 - i] + old.elements[old.part - 1 - i];
+		i++;
+	}
+	ft_free_s(old.elements);
+	info.orders = old.orders;
 	return (info);
 }
