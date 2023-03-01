@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/02/25 19:26:46 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/01 13:35:52 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS = $(addprefix src/, \
 		error/raise_error.c \
 		math/power.c math/max_i.c math/min_i.c\
 		order/print_orders.c order/reverse_orders.c order/set_order.c \
-		sort/sort_stacks.c \
+		sort/pre_sort_2.c sort/pre_sort_3.c sort/pre_sort_4.c sort/preprocess.c sort/sort_stacks.c \
 		stack/get_a_bottom.c stack/get_a_top.c stack/get_b_bottom.c stack/get_b_top.c \
 		stack/init_stacks.c stack/print_stacks.c stack/set_stack_a.c stack/set_stacks.c \
 		main.c)
