@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 21:36:50 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 21:37:23 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ static void	sort_2345(t_stacks *stacks)
 		sort_2(stacks, asc);
 		return ;
 	}
-	if (stacks->num == 3)
+	else if (stacks->num == 3)
 	{
 		sort_3(stacks, asc);
 		return ;
 	}
-	if (stacks->num == 4)
+	else if (stacks->num == 4)
 	{
 		sort_4(stacks, asc);
 		return ;
 	}
-	if (stacks->num == 5)
+	else if (stacks->num == 5)
 	{
 		sort_5(stacks, asc);
 		return ;
