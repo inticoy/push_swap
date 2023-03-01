@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 14:26:31 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 15:15:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,106 +29,111 @@ static int	arr_sum(int *elements, int len)
 	return (sum);
 }
 
+static void	merge_to_aa(t_stacks *stacks, t_merge_info minfo)
+{
+	int	idx;
 
+	if (!minfo.a && !minfo.b && !minfo.c)
+		return ;
+	if (minfo.order > 0) // is asc->find biggest
+	{
+		if (minfo.a && !minfo.b && !minfo.c)
+			idx = 0;
+		else if (!minfo.a && minfo.b && !minfo.c)
+			idx = 1;
+		else if (!minfo.a && !minfo.b && minfo.c)
+			idx = 2;
+		else if (minfo.a && minfo.b && !minfo.c)
+		{
+			if (get_b_bottom(stacks) > get_b_top(stacks))
+				idx = 0;
+			else
+				idx = 1;
+		}
+		else if (minfo.a && !minfo.b && minfo.c)
+		{
+			if (get_b_bottom(stacks) > get_a_bottom(stacks))
+				idx = 0;
+			else
+				idx = 2;
+		}
+		else if (!minfo.a && minfo.b && minfo.c)
+		{
+			if (get_b_top(stacks) > get_a_bottom(stacks))
+				idx = 1;
+			else
+				idx = 2;
+		}
+		else
+			idx = max_3(get_b_bottom(stacks), get_b_top(stacks), get_a_bottom(stacks));
+	}
+	else
+	{
+		if (minfo.a && !minfo.b && !minfo.c)
+			idx = 0;
+		else if (!minfo.a && minfo.b && !minfo.c)
+			idx = 1;
+		else if (!minfo.a && !minfo.b && minfo.c)
+			idx = 2;
+		else if (minfo.a && minfo.b && !minfo.c)
+		{
+			if (get_b_bottom(stacks) < get_b_top(stacks))
+				idx = 0;
+			else
+				idx = 1;
+		}
+		else if (minfo.a && !minfo.b && minfo.c)
+		{
+			if (get_b_bottom(stacks) < get_a_bottom(stacks))
+				idx = 0;
+			else
+				idx = 2;
+		}
+		else if (!minfo.a && minfo.b && minfo.c)
+		{
+			if (get_b_top(stacks) < get_a_bottom(stacks))
+				idx = 1;
+			else
+				idx = 2;
+		}
+		else
+			idx = min_3(get_b_bottom(stacks), get_b_top(stacks), get_a_bottom(stacks));
+	}
+	if (idx == 0)
+	{
+		rev_rotate_b(stacks, ft_true);
+		push_a(stacks, ft_true);
+		minfo.a--;
+	}
+	else if (idx == 1)
+	{
+		push_a(stacks, ft_true);
+		minfo.b--;
+	}
+	else if (idx == 2)
+	{
+		rev_rotate_a(stacks, ft_true);
+		minfo.c--;
+	}
+	merge_to_aa(stacks, minfo);
+}
 
 static void	merge_to_a(t_stacks *stacks, t_div_info info)
 {
-	int	pa;
-	int	i;
+	t_merge_info	minfo;
+	int				pa;
+	int				i;
 
 	pa = arr_sum(info.elements + (info.part / 3) * 2, info.part / 3);
 	repeat_cmd(push_a, stacks, pa);
 	i = 0;
 	while (i < info.part / 3)
 	{
-		t_merge_info	minfo;
-		int				idx;
-
 		minfo.a = info.elements[i];
 		minfo.b = info.elements[(info.part / 3) * 2 - 1 - i];
 		minfo.c = info.elements[info.part - 1 - i];
 		minfo.order = info.orders[i];
-
-		if (minfo.order > 0) // is asc->find biggest
-		{
-			while (minfo.a || minfo.b || minfo.c)
-			{
-				if (!minfo.a)
-				{
-					if (!minfo.b)
-						idx = 2;
-					else
-						idx = max_i(get_b_top(stacks), get_a_bottom(stacks)) + 1;
-				}
-				else
-				{
-					if (!minfo.b && !minfo.c)
-						idx = 0;
-					else if (!minfo.b)
-						idx = max_i(get_b_bottom(stacks), get_a_bottom(stacks));
-					else if (!minfo.c)
-						idx = max_i(get_b_bottom(stacks), get_b_top(stacks));
-					else
-						idx = max_3(get_b_bottom(stacks), get_b_top(stacks), get_a_bottom(stacks));
-				}
-				if (idx == 0)
-				{
-					rev_rotate_b(stacks, ft_true);
-					push_a(stacks, ft_true);
-					minfo.a--;
-				}
-				else if (idx == 1)
-				{
-					push_a(stacks, ft_true);
-					minfo.b--;
-				}
-				else if (idx == 2)
-				{
-					rev_rotate_a(stacks, ft_true);
-					minfo.c--;
-				}
-			}
-		}
-		else
-		{
-			while (minfo.a || minfo.b || minfo.c)
-			{
-				if (!minfo.a)
-				{
-					if (!minfo.b)
-						idx = 2;
-					else
-						idx = min_i(get_b_top(stacks), get_a_bottom(stacks)) + 1;
-				}
-				else
-				{
-					if (!minfo.b && !minfo.c)
-						idx = 0;
-					else if (!minfo.b)
-						idx = min_i(get_b_bottom(stacks), get_a_bottom(stacks));
-					else if (!minfo.c)
-						idx = min_i(get_b_bottom(stacks), get_b_top(stacks));
-					else
-						idx = min_3(get_b_bottom(stacks), get_b_top(stacks), get_a_bottom(stacks));
-				}
-				if (idx == 0)
-				{
-					rev_rotate_b(stacks, ft_true);
-					push_a(stacks, ft_true);
-					minfo.a--;
-				}
-				else if (idx == 1)
-				{
-					push_a(stacks, ft_true);
-					minfo.b--;
-				}
-				else if (idx == 2)
-				{
-					rev_rotate_a(stacks, ft_true);
-					minfo.c--;
-				}
-			}
-		}
+		merge_to_aa(stacks, minfo);
 		i++;
 	}
 }
@@ -141,87 +146,83 @@ static void	merge_to_bb(t_stacks *stacks, t_merge_info minfo)
 		return ;
 	if (minfo.order > 0) // is asc->find biggest
 	{
-		if (!minfo.a)
+		if (minfo.a && !minfo.b && !minfo.c)
+			idx = 0;
+		else if (!minfo.a && minfo.b && !minfo.c)
+			idx = 1;
+		else if (!minfo.a && !minfo.b && minfo.c)
+			idx = 2;
+		else if (minfo.a && minfo.b && !minfo.c)
 		{
-			if (!minfo.b)
-				idx = 2;
+			if (get_a_bottom(stacks) > get_a_top(stacks))
+				idx = 0;
 			else
-				idx = max_i(get_a_top(stacks), get_b_bottom(stacks)) + 1;
+				idx = 1;
+		}
+		else if (minfo.a && !minfo.b && minfo.c)
+		{
+			if (get_a_bottom(stacks) > get_b_bottom(stacks))
+				idx = 0;
+			else
+				idx = 2;
+		}
+		else if (!minfo.a && minfo.b && minfo.c)
+		{
+			if (get_a_top(stacks) > get_b_bottom(stacks))
+				idx = 1;
+			else
+				idx = 2;
 		}
 		else
-		{
-			if (!minfo.b && !minfo.c)
-				idx = 0;
-			else if (!minfo.b) //here is the problem
-			{
-				if (get_a_bottom(stacks) > get_b_bottom(stacks))
-					idx = 0;
-				else
-					idx = 2;
-			}
-			else if (!minfo.c)
-				idx = max_i(get_a_bottom(stacks), get_a_top(stacks));
-			else
-				idx = max_3(get_a_bottom(stacks), get_a_top(stacks), get_b_bottom(stacks));
-		}
-		if (idx == 0)
-		{
-			rev_rotate_a(stacks, ft_true);
-			push_b(stacks, ft_true);
-			minfo.a--;
-		}
-		else if (idx == 1)
-		{
-			push_b(stacks, ft_true);
-			minfo.b--;
-		}
-		else if (idx == 2)
-		{
-			rev_rotate_b(stacks, ft_true);
-			minfo.c--;
-		}
+			idx = max_3(get_a_bottom(stacks), get_a_top(stacks), get_b_bottom(stacks));
 	}
 	else
 	{
-		if (!minfo.a)
+		if (minfo.a && !minfo.b && !minfo.c)
+			idx = 0;
+		else if (!minfo.a && minfo.b && !minfo.c)
+			idx = 1;
+		else if (!minfo.a && !minfo.b && minfo.c)
+			idx = 2;
+		else if (minfo.a && minfo.b && !minfo.c)
 		{
-			if (!minfo.b)
-				idx = 2;
+			if (get_a_bottom(stacks) < get_a_top(stacks))
+				idx = 0;
 			else
-				idx = min_i(get_a_top(stacks), get_b_bottom(stacks)) + 1;
+				idx = 1;
+		}
+		else if (minfo.a && !minfo.b && minfo.c)
+		{
+			if (get_a_bottom(stacks) < get_b_bottom(stacks))
+				idx = 0;
+			else
+				idx = 2;
+		}
+		else if (!minfo.a && minfo.b && minfo.c)
+		{
+			if (get_a_top(stacks) < get_b_bottom(stacks))
+				idx = 1;
+			else
+				idx = 2;
 		}
 		else
-		{
-			if (!minfo.b && !minfo.c)
-				idx = 0;
-			else if (!minfo.b) //here is the problem
-				{
-					if (get_a_bottom(stacks) < get_b_bottom(stacks))
-						idx = 0;
-					else
-						idx = 2;
-				}
-			else if (!minfo.c)
-				idx = min_i(get_a_bottom(stacks), get_a_top(stacks));
-			else
-				idx = min_3(get_a_bottom(stacks), get_a_top(stacks), get_b_bottom(stacks));
-		}
-		if (idx == 0)
-		{
-			rev_rotate_a(stacks, ft_true);
-			push_b(stacks, ft_true);
-			minfo.a--;
-		}
-		else if (idx == 1)
-		{
-			push_b(stacks, ft_true);
-			minfo.b--;
-		}
-		else if (idx == 2)
-		{
-			rev_rotate_b(stacks, ft_true);
-			minfo.c--;
-		}
+			idx = min_3(get_a_bottom(stacks), get_a_top(stacks), get_b_bottom(stacks));
+	}
+	if (idx == 0)
+	{
+		rev_rotate_a(stacks, ft_true);
+		push_b(stacks, ft_true);
+		minfo.a--;
+	}
+	else if (idx == 1)
+	{
+		push_b(stacks, ft_true);
+		minfo.b--;
+	}
+	else if (idx == 2)
+	{
+		rev_rotate_b(stacks, ft_true);
+		minfo.c--;
 	}
 	merge_to_bb(stacks, minfo);
 }
