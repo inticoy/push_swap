@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/01 21:05:17 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/01 21:32:29 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ endif
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(F_OBJS)
-	$(CC) -L./libft $(SRCS) -lft -I $(INCLUDE) -o $@ -fsanitize=address
+	$(CC) -Wall -Wextra -Werror -L./libft $(SRCS) -lft -I $(INCLUDE) -o $@ 
+# -fsanitize=address
 
 bonus :
 	make BONUS=1 all
