@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:46:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 20:10:47 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 21:30:32 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	sort_4(t_stacks *stacks, t_order order)
 	minfo.a = 0;
 	minfo.b = 2;
 	minfo.c = 2;
-	minfo.order = asc;
+	minfo.order = order;
 	repeat_cmd(push_b, stacks, ft_true, 2);
 	sa = need_swap_a(stacks);
 	sb = need_swap_b(stacks);

@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:32:31 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 20:23:40 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 21:30:01 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	pre_sort_4(t_stacks *stacks, t_order order)
 {
 	t_merge_info	minfo;
-	int				idx;
 
 	push_b(stacks, ft_true);
 	rotate_b(stacks, ft_true);

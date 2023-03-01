@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:23:35 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 21:06:04 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 21:30:13 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static t_bool	need_swap_b(t_stacks *stacks, t_order order)
 void	pre_sort_6(t_stacks *stacks, t_order order)
 {
 	t_merge_info	minfo;
-	int				idx;
 
 	push_b(stacks, ft_true);
 	push_b(stacks, ft_true);
