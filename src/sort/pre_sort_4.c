@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pre_sort_4.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:32:31 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 14:06:48 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 19:02:12 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,99 +29,12 @@ void	pre_sort_4(t_stacks *stacks, t_order order)
 	{
 		if (*((int *)stacks->a->content) < *((int *)stacks->a->next->content))
 			swap_a(stacks, ft_true);
-		while (minfo.a || minfo.b || minfo.c)
-		{
-			idx = -1;
-			if (!minfo.a)
-			{
-				if (minfo.b && minfo.c)
-					idx = max_i(get_a_top(stacks), get_b_bottom(stacks)) + 1;
-				else if (!minfo.b)
-					idx = 2;
-				else if (!minfo.c)
-					idx = 1;
-			}
-			else
-			{
-				if (!minfo.b && !minfo.c)
-					idx = 0;
-				else if (!minfo.b) //here is the problem
-				{
-					if (get_a_bottom(stacks) > get_b_bottom(stacks))
-						idx = 0;
-					else
-						idx = 2;
-				}
-				else if (!minfo.c)
-					idx = max_i(get_a_bottom(stacks), get_a_top(stacks));
-				else
-					idx = max_3(get_a_bottom(stacks), get_a_top(stacks), get_b_bottom(stacks));
-			}
-			if (idx == 0)
-			{
-				rev_rotate_a(stacks, ft_true);
-				push_b(stacks, ft_true);
-				minfo.a--;
-			}
-			else if (idx == 1)
-			{
-				push_b(stacks, ft_true);
-				minfo.b--;
-			}
-			else if (idx == 2)
-			{
-				rev_rotate_b(stacks, ft_true);
-				minfo.c--;
-			}
-		}
+		merge_to_b(stacks, minfo);
 	}
 	else
 	{
 		if (*((int *)stacks->a->content) > *((int *)stacks->a->next->content))
 			swap_a(stacks, ft_true);
-		while (minfo.a || minfo.b || minfo.c)
-		{
-			if (!minfo.a)
-			{
-				if (minfo.b && minfo.c)
-					idx = min_i(get_a_top(stacks), get_b_bottom(stacks)) + 1;
-				else if (!minfo.b)
-					idx = 2;
-				else if (!minfo.c)
-					idx = 1;
-			}
-			else
-			{
-				if (!minfo.b && !minfo.c)
-					idx = 0;
-				else if (!minfo.b) //here is the problem
-				{
-					if (get_a_bottom(stacks) < get_b_bottom(stacks))
-						idx = 0;
-					else
-						idx = 2;
-				}
-				else if (!minfo.c)
-					idx = min_i(get_a_bottom(stacks), get_a_top(stacks));
-				else
-					idx = min_3(get_a_bottom(stacks), get_a_top(stacks), get_b_bottom(stacks));
-			}
-			if (idx == 0)
-			{
-				rev_rotate_a(stacks, ft_true);
-				push_b(stacks, ft_true);
-				minfo.a--;
-			}
-			else if (idx == 1)
-			{
-				push_b(stacks, ft_true);
-				minfo.b--;
-			}
-			else if (idx == 2)
-			{
-				rev_rotate_b(stacks, ft_true);
-				minfo.c--;
-			}
-		}
+		merge_to_b(stacks, minfo);
 	}
 }
