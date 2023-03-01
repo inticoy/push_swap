@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:40:12 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 13:45:24 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,17 @@ typedef struct s_merge_info
 	t_order	order;
 }	t_merge_info;
 
-void			push_a(t_stacks *stacks);
-void			push_b(t_stacks *stacks);
-void			rev_rotate_a(t_stacks *stacks);
-void			rev_rotate_ab(t_stacks *stacks);
-void			rev_rotate_b(t_stacks *stacks);
-void			rotate_a(t_stacks *stacks);
-void			rotate_ab(t_stacks *stacks);
-void			rotate_b(t_stacks *stacks);
-void			swap_a(t_stacks *stacks);
-void			swap_b(t_stacks *stacks);
-void			swap_ab(t_stacks *stacks);
+void			push_a(t_stacks *stacks, t_bool opt);
+void			push_b(t_stacks *stacks, t_bool opt);
+void			rev_rotate_a(t_stacks *stacks, t_bool opt);
+void			rev_rotate_ab(t_stacks *stacks, t_bool opt);
+void			rev_rotate_b(t_stacks *stacks, t_bool opt);
+void			rotate_a(t_stacks *stacks, t_bool opt);
+void			rotate_ab(t_stacks *stacks, t_bool opt);
+void			rotate_b(t_stacks *stacks, t_bool opt);
+void			swap_a(t_stacks *stacks, t_bool opt);
+void			swap_b(t_stacks *stacks, t_bool opt);
+void			swap_ab(t_stacks *stacks, t_bool opt);
 
 t_div_info		get_div_info(int size);
 t_div_info		update_div_info(t_div_info old);

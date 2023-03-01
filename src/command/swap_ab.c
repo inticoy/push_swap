@@ -6,15 +6,16 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:45:26 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 18:53:36 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 13:45:51 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_ab(t_stacks *stacks)
+void	swap_ab(t_stacks *stacks, t_bool opt)
 {
-	swap_a(stacks);
-	swap_b(stacks);
-	//ft_printf("ss\n");
+	swap_a(stacks, ft_false);
+	swap_b(stacks, ft_false);
+	if (opt)
+		ft_printf("ss\n");
 }
