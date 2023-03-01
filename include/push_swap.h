@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:56:52 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 14:05:27 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef enum e_order
 {
-	desc,
-	asc
+	desc = -1,
+	asc = 1
 }	t_order;
 
 typedef struct s_stacks

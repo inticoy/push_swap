@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:29:58 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:58:02 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 14:05:52 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	pre_sort_2(t_stacks *stacks, t_order order)
 
 	x = *((int *)stacks->a->content);
 	y = *((int *)stacks->a->next->content);
-	if (order && x < y)
+	if (order > 0 && x < y)
 		swap_a(stacks, ft_true);
-	else if (!order && x > y)
+	else if (order < 0 && x > y)
 		swap_a(stacks, ft_true);
 	repeat_cmd(push_b, stacks, 2);
 }

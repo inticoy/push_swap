@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:32:31 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 14:01:05 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 14:06:48 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	pre_sort_4(t_stacks *stacks, t_order order)
 	minfo.b = 2;
 	minfo.c = 1;
 	minfo.order = order;
-	if (minfo.order) // is asc->find biggest
+	if (minfo.order > 0) // is asc->find biggest
 	{
 		if (*((int *)stacks->a->content) < *((int *)stacks->a->next->content))
 			swap_a(stacks, ft_true);

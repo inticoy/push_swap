@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 14:01:37 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 14:07:15 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	merge_to_a(t_stacks *stacks, t_div_info info)
 		minfo.c = info.elements[info.part - 1 - i];
 		minfo.order = info.orders[i];
 
-		if (minfo.order) // is asc->find biggest
+		if (minfo.order > 0) // is asc->find biggest
 		{
 			while (minfo.a || minfo.b || minfo.c)
 			{
@@ -161,7 +161,7 @@ static void	merge_to_b(t_stacks *stacks, t_div_info info)
 		minfo.c = info.elements[info.part - 1 - i];
 		minfo.order = info.orders[i];
 
-		if (minfo.order) // is asc->find biggest
+		if (minfo.order > 0) // is asc->find biggest
 		{
 			while (minfo.a || minfo.b || minfo.c)
 			{

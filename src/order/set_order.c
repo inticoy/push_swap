@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:16:22 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 14:19:22 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 14:07:51 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ t_order	*set_order(int part, int level)
 		j = 0;
 		while (j < power(3, i))
 		{
-			order[(power(3, i) * 2 - 1) - j] = !order[j];
-			order[(power(3, i) * 3 - 1) - j] = !order[j];
+			order[(power(3, i) * 2 - 1) - j] = -order[j];
+			order[(power(3, i) * 3 - 1) - j] = -order[j];
 			j++;
 		}
 		i++;
