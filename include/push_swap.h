@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 20:12:37 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 21:05:07 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ void			merge_to_b(t_stacks *stacks, t_merge_info minfo);
 void			pre_sort_2(t_stacks *stacks, t_order order);
 void			pre_sort_3(t_stacks *stacks, t_order order);
 void			pre_sort_4(t_stacks *stacks, t_order order);
-//void			pre_sort_5(t_stacks *stacks, t_order order);
+void			pre_sort_5(t_stacks *stacks, t_order order);
+void			pre_sort_6(t_stacks *stacks, t_order order);
 
 void			sort_2(t_stacks *stacks, t_order order);
 void			sort_3(t_stacks *stacks, t_order order);

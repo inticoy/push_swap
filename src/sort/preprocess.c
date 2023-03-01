@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   preprocess.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:33:00 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:39:52 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 21:04:55 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ void	preprocess(t_stacks *stacks, t_div_info info)
 			pre_sort_3(stacks, info.orders[i]);
 		else if (info.elements[i] == 4)
 			pre_sort_4(stacks, info.orders[i]);
+		else if (info.elements[i] == 5)
+			pre_sort_5(stacks, info.orders[i]);
+		else if (info.elements[i] == 6)
+			pre_sort_6(stacks, info.orders[i]);
 		i++;
 	}
 }

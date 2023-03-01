@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/01 20:12:34 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/01 21:05:17 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS = $(addprefix src/, \
 		math/power.c math/max_i.c math/min_i.c math/max_3.c math/min_3.c \
 		order/print_orders.c order/reverse_orders.c order/set_order.c \
 		sort/merge_all_to_a.c sort/merge_all_to_b.c sort/merge_to_a.c sort/merge_to_b.c \
-		sort/pre_sort_2.c sort/pre_sort_3.c sort/pre_sort_4.c \
+		sort/pre_sort_2.c sort/pre_sort_3.c sort/pre_sort_4.c sort/pre_sort_5.c sort/pre_sort_6.c \
 		sort/sort_2.c sort/sort_3.c sort/sort_4.c sort/sort_5.c \
 		sort/preprocess.c sort/sort_stacks.c \
 		stack/get_a_bottom.c stack/get_a_top.c stack/get_b_bottom.c stack/get_b_top.c \
