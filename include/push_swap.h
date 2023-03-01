@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 15:32:11 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 18:53:05 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,10 @@ void			print_orders(t_order *orders, int len);
 void			reverse_orders(t_order *orders, int len);
 t_order			*set_order(int part, int level);
 
+void			merge_all_to_a(t_stacks *stacks, t_div_info info);
+void			merge_all_to_b(t_stacks *stacks, t_div_info info);
+void			merge_to_a(t_stacks *stacks, t_merge_info minfo);
+void			merge_to_b(t_stacks *stacks, t_merge_info minfo);
 void			pre_sort_2(t_stacks *stacks, t_order order);
 void			pre_sort_3(t_stacks *stacks, t_order order);
 void			pre_sort_4(t_stacks *stacks, t_order order);
@@ -85,5 +89,7 @@ void			print_stacks(t_stacks stacks);
 t_list			*set_stack_a(int argc, char **argv);
 t_list			*set_stack_b(int size);
 t_stacks		set_stacks(int argc, char **argv);
+
+int				arr_sum(int *elements, int len);
 
 #endif
