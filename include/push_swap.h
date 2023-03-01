@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:36:00 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 13:40:12 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ void			print_orders(t_order *orders, int len);
 void			reverse_orders(t_order *orders, int len);
 t_order			*set_order(int part, int level);
 
-void			pre_sort2(t_stacks *stacks, t_order order);
-void			pre_sort3(t_stacks *stacks, t_order order);
-void			pre_sort4(t_stacks *stacks, t_order order);
-//void			pre_sort5(t_stacks *stacks, t_order order);
+void			pre_sort_2(t_stacks *stacks, t_order order);
+void			pre_sort_3(t_stacks *stacks, t_order order);
+void			pre_sort_4(t_stacks *stacks, t_order order);
+//void			pre_sort_5(t_stacks *stacks, t_order order);
 void			preprocess(t_stacks *stacks, t_div_info info);
 void			sort_stacks(t_stacks *stacks);
 

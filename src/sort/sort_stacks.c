@@ -6,16 +6,13 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:35:53 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 13:38:56 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libmath.h"
 #include "push_swap.h"
-
-static int	min_3(int a, int b, int c);
-static int	max_3(int a, int b, int c);
 
 static int	arr_sum(int *elements, int len)
 {
@@ -32,31 +29,7 @@ static int	arr_sum(int *elements, int len)
 	return (sum);
 }
 
-static int	max_3(int a, int b, int c)
-{
-	if (a > b)
-	{
-		if (a > c)
-			return (0);
-		else
-			return (2);
-	}
-	else
-		return (1 + max_i(b, c));
-}
 
-static int	min_3(int a, int b, int c)
-{
-	if (a < b)
-	{
-		if (a < c)
-			return (0);
-		else
-			return (2);
-	}
-	else
-		return (1 + min_i(b, c));
-}
 
 static void	merge_to_a(t_stacks *stacks, t_div_info info)
 {

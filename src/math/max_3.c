@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmath.h                                          :+:      :+:    :+:   */
+/*   max_3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 13:57:21 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:38:26 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/01 13:37:56 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/01 13:38:48 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBMATH_H
-# define LIBMATH_H
+#include "libmath.h"
 
-int	power(int num, int exp);
-int	max_3(int a, int b, int c);
-int	min_3(int a, int b, int c);
-int	max_i(int a, int b);
-int	min_i(int a, int b);
-
-#endif
+int	max_3(int a, int b, int c)
+{
+	if (a > b)
+	{
+		if (a > c)
+			return (0);
+		else
+			return (2);
+	}
+	else
+		return (1 + max_i(b, c));
+}

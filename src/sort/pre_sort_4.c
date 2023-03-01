@@ -6,10 +6,11 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:32:31 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:32:45 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 13:39:08 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libmath.h"
 #include "push_swap.h"
 
 void	pre_sort_4(t_stacks *stacks, t_order order)
