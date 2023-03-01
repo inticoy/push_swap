@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/01 21:32:29 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/01 22:05:27 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ RM = rm -rf
 # CFLAGS = -Wall -Wextra -Werror
 
 SRCS = $(addprefix src/, \
-		command/push_a.c command/push_b.c \
-		command/repeat_cmd.c \
-		command/rev_rotate_a.c command/rev_rotate_ab.c command/rev_rotate_b.c\
-		command/rotate_a.c command/rotate_ab.c command/rotate_b.c \
-		command/swap_a.c command/swap_ab.c command/swap_b.c \
-		division/get_div_info.c division/update_div_info.c \
+		cmd/push_a.c cmd/push_b.c \
+		cmd/repeat_cmd.c \
+		cmd/rev_rotate_a.c cmd/rev_rotate_ab.c cmd/rev_rotate_b.c\
+		cmd/rotate_a.c cmd/rotate_ab.c cmd/rotate_b.c \
+		cmd/swap_a.c cmd/swap_ab.c cmd/swap_b.c \
+		div/get_div_info.c div/update_div_info.c \
 		error/raise_error.c \
 		math/power.c math/max_i.c math/min_i.c math/max_3.c math/min_3.c \
 		order/print_orders.c order/reverse_orders.c order/set_order.c \
@@ -33,7 +33,7 @@ SRCS = $(addprefix src/, \
 		sort/preprocess.c sort/sort_stacks.c \
 		stack/get_a_bottom.c stack/get_a_top.c stack/get_b_bottom.c stack/get_b_top.c \
 		stack/init_stacks.c stack/print_stacks.c stack/set_stack_a.c stack/set_stacks.c \
-		utils/arr_sum.c \
+		util/arr_sum.c \
 		main.c)
 OBJS = $(SRCS:.c=.o)
 
