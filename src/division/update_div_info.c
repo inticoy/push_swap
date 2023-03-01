@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update_div_info.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:39:36 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 19:10:50 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 21:26:59 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ t_div_info	update_div_info(t_div_info old)
 	i = 0;
 	while (i < info.part)
 	{
-		info.elements[i] = old.elements[i] + old.elements[(old.part / 3) * 2 - 1 - i] + old.elements[old.part - 1 - i];
+		info.elements[i] = old.elements[i] \
+							+ old.elements[(old.part / 3) * 2 - 1 - i] \
+							+ old.elements[old.part - 1 - i];
 		i++;
 	}
 	ft_free_s(old.elements);
