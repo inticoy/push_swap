@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:49:53 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 18:55:58 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 22:31:27 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,67 +19,40 @@ void	merge_to_a(t_stacks *stacks, t_merge_info minfo)
 
 	if (!minfo.a && !minfo.b && !minfo.c)
 		return ;
-	if (minfo.order > 0) // is asc->find biggest
+	else if (minfo.a && !minfo.b && !minfo.c)
+		idx = 0;
+	else if (!minfo.a && minfo.b && !minfo.c)
+		idx = 1;
+	else if (!minfo.a && !minfo.b && minfo.c)
+		idx = 2;
+	else if (minfo.a && minfo.b && !minfo.c)
 	{
-		if (minfo.a && !minfo.b && !minfo.c)
+		if ((minfo.order > 0 && (get_b_bottom(stacks) > get_b_top(stacks))) \
+			|| (minfo.order < 0 && (get_b_bottom(stacks) < get_b_top(stacks))))
 			idx = 0;
-		else if (!minfo.a && minfo.b && !minfo.c)
-			idx = 1;
-		else if (!minfo.a && !minfo.b && minfo.c)
-			idx = 2;
-		else if (minfo.a && minfo.b && !minfo.c)
-		{
-			if (get_b_bottom(stacks) > get_b_top(stacks))
-				idx = 0;
-			else
-				idx = 1;
-		}
-		else if (minfo.a && !minfo.b && minfo.c)
-		{
-			if (get_b_bottom(stacks) > get_a_bottom(stacks))
-				idx = 0;
-			else
-				idx = 2;
-		}
-		else if (!minfo.a && minfo.b && minfo.c)
-		{
-			if (get_b_top(stacks) > get_a_bottom(stacks))
-				idx = 1;
-			else
-				idx = 2;
-		}
 		else
-			idx = max_3(get_b_bottom(stacks), get_b_top(stacks), get_a_bottom(stacks));
+			idx = 1;
+	}
+	else if (minfo.a && !minfo.b && minfo.c)
+	{
+		if ((minfo.order > 0 && (get_b_bottom(stacks) > get_a_bottom(stacks))) \
+			|| (minfo.order < 0 && (get_b_bottom(stacks) < get_a_bottom(stacks))))
+			idx = 0;
+		else
+			idx = 2;
+	}
+	else if (!minfo.a && minfo.b && minfo.c)
+	{
+		if ((minfo.order > 0 && (get_b_top(stacks) > get_a_bottom(stacks))) \
+			|| (minfo.order < 0 && (get_b_top(stacks) < get_a_bottom(stacks))))
+			idx = 1;
+		else
+			idx = 2;
 	}
 	else
 	{
-		if (minfo.a && !minfo.b && !minfo.c)
-			idx = 0;
-		else if (!minfo.a && minfo.b && !minfo.c)
-			idx = 1;
-		else if (!minfo.a && !minfo.b && minfo.c)
-			idx = 2;
-		else if (minfo.a && minfo.b && !minfo.c)
-		{
-			if (get_b_bottom(stacks) < get_b_top(stacks))
-				idx = 0;
-			else
-				idx = 1;
-		}
-		else if (minfo.a && !minfo.b && minfo.c)
-		{
-			if (get_b_bottom(stacks) < get_a_bottom(stacks))
-				idx = 0;
-			else
-				idx = 2;
-		}
-		else if (!minfo.a && minfo.b && minfo.c)
-		{
-			if (get_b_top(stacks) < get_a_bottom(stacks))
-				idx = 1;
-			else
-				idx = 2;
-		}
+		if (minfo.order > 0)
+			idx = max_3(get_b_bottom(stacks), get_b_top(stacks), get_a_bottom(stacks));
 		else
 			idx = min_3(get_b_bottom(stacks), get_b_top(stacks), get_a_bottom(stacks));
 	}
