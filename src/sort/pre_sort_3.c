@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pre_sort_3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:30:50 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 14:06:23 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 15:32:48 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	pre_sort_3(t_stacks *stacks, t_order order)
 
 	if (a1 > a2 && a2 > a3)					//3 2 1
 	{
-		repeat_cmd(push_b, stacks, 3);
+		repeat_cmd(push_b, stacks, ft_true, 3);
 	}
 	else if (a1 > a2 && a2 < a3 && a1 > a3)	//3 1 2
 	{
-		repeat_cmd(push_b, stacks, 3);
+		repeat_cmd(push_b, stacks, ft_true, 3);
 		swap_b(stacks, ft_true);
 	}
 	else if (a1 > a2 && a2 < a3 && a1 < a3)	//2 1 3

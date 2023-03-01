@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 15:15:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 15:33:24 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ static void	merge_to_a(t_stacks *stacks, t_div_info info)
 	int				i;
 
 	pa = arr_sum(info.elements + (info.part / 3) * 2, info.part / 3);
-	repeat_cmd(push_a, stacks, pa);
+	repeat_cmd(push_a, stacks, ft_true, pa);
 	i = 0;
 	while (i < info.part / 3)
 	{
@@ -234,7 +234,7 @@ static void	merge_to_b(t_stacks *stacks, t_div_info info)
 	int				i;
 
 	pb = arr_sum(info.elements + (info.part / 3) * 2, info.part / 3);
-	repeat_cmd(push_b, stacks, pb);
+	repeat_cmd(push_b, stacks, ft_true, pb);
 	i = 0;
 	while (i < info.part / 3)
 	{
@@ -268,5 +268,5 @@ void	sort_stacks(t_stacks *stacks)
 		info = update_div_info(info);
 	}
 	if (num_conquer % 2 == 0)
-		repeat_cmd(push_a, stacks, stacks->num);
+		repeat_cmd(push_a, stacks, ft_true, stacks->num);
 }

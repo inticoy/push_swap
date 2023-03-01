@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 14:05:27 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 15:32:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ typedef struct s_merge_info
 
 void			push_a(t_stacks *stacks, t_bool opt);
 void			push_b(t_stacks *stacks, t_bool opt);
-void			repeat_cmd(void (*f)(t_stacks *, t_bool), t_stacks *s, int n);
+void			repeat_cmd(	void (*f)(t_stacks *, t_bool), \
+							t_stacks *s, t_bool opt, int n);
 void			rev_rotate_a(t_stacks *stacks, t_bool opt);
 void			rev_rotate_ab(t_stacks *stacks, t_bool opt);
 void			rev_rotate_b(t_stacks *stacks, t_bool opt);
