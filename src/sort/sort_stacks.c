@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 21:37:23 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 22:18:57 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,8 @@ static void	sort_2345(t_stacks *stacks)
 	}
 }
 
-void	sort_stacks(t_stacks *stacks)
+void	sort_stacks(t_stacks *stacks, t_div_info *dinfo)
 {
-	t_div_info	info;
 	int			i;
 	int			num_conquer;
 
@@ -48,19 +47,18 @@ void	sort_stacks(t_stacks *stacks)
 		sort_2345(stacks);
 		return ;
 	}
-	info = get_div_info(ft_lstsize(stacks->a));
 	i = -1;
-	num_conquer = info.level;
-	if (info.level % 2 == 0)
-		reverse_orders(info.orders, info.part);
-	preprocess(stacks, info);
+	num_conquer = dinfo->level;
+	if (dinfo->level % 2 == 0)
+		reverse_orders(dinfo->orders, dinfo->part);
+	preprocess(stacks, *dinfo);
 	while (++i < num_conquer)
 	{
 		if (i % 2 == 0)
-			merge_all_to_a(stacks, info);
+			merge_all_to_a(stacks, *dinfo);
 		else
-			merge_all_to_b(stacks, info);
-		info = update_div_info(info);
+			merge_all_to_b(stacks, *dinfo);
+		*dinfo = update_div_info(*dinfo);
 	}
 	if (num_conquer % 2 == 0)
 		repeat_cmd(push_a, stacks, ft_true, stacks->num);
