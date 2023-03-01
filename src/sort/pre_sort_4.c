@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:32:31 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:39:08 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 14:01:05 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	pre_sort_4(t_stacks *stacks, t_order order)
 	t_merge_info 	minfo;
 	int				idx;
 
-	rotate_a(stacks);
-	push_b(stacks);
-	rotate_b(stacks);
+	rotate_a(stacks, ft_true);
+	push_b(stacks, ft_true);
+	rotate_b(stacks, ft_true);
 	minfo.a = 1;
 	minfo.b = 2;
 	minfo.c = 1;
@@ -28,7 +28,7 @@ void	pre_sort_4(t_stacks *stacks, t_order order)
 	if (minfo.order) // is asc->find biggest
 	{
 		if (*((int *)stacks->a->content) < *((int *)stacks->a->next->content))
-			swap_a(stacks);
+			swap_a(stacks, ft_true);
 		while (minfo.a || minfo.b || minfo.c)
 		{
 			idx = -1;
@@ -59,18 +59,18 @@ void	pre_sort_4(t_stacks *stacks, t_order order)
 			}
 			if (idx == 0)
 			{
-				rev_rotate_a(stacks);
-				push_b(stacks);
+				rev_rotate_a(stacks, ft_true);
+				push_b(stacks, ft_true);
 				minfo.a--;
 			}
 			else if (idx == 1)
 			{
-				push_b(stacks);
+				push_b(stacks, ft_true);
 				minfo.b--;
 			}
 			else if (idx == 2)
 			{
-				rev_rotate_b(stacks);
+				rev_rotate_b(stacks, ft_true);
 				minfo.c--;
 			}
 		}
@@ -78,7 +78,7 @@ void	pre_sort_4(t_stacks *stacks, t_order order)
 	else
 	{
 		if (*((int *)stacks->a->content) > *((int *)stacks->a->next->content))
-			swap_a(stacks);
+			swap_a(stacks, ft_true);
 		while (minfo.a || minfo.b || minfo.c)
 		{
 			if (!minfo.a)
@@ -108,18 +108,18 @@ void	pre_sort_4(t_stacks *stacks, t_order order)
 			}
 			if (idx == 0)
 			{
-				rev_rotate_a(stacks);
-				push_b(stacks);
+				rev_rotate_a(stacks, ft_true);
+				push_b(stacks, ft_true);
 				minfo.a--;
 			}
 			else if (idx == 1)
 			{
-				push_b(stacks);
+				push_b(stacks, ft_true);
 				minfo.b--;
 			}
 			else if (idx == 2)
 			{
-				rev_rotate_b(stacks);
+				rev_rotate_b(stacks, ft_true);
 				minfo.c--;
 			}
 		}

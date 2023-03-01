@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:38:56 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 14:01:37 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	merge_to_a(t_stacks *stacks, t_div_info info)
 	i = 0;
 	while (i < pa)
 	{
-		push_a(stacks);
+		push_a(stacks, ft_true);
 		i++;
 	}
 	i = 0;
@@ -78,18 +78,18 @@ static void	merge_to_a(t_stacks *stacks, t_div_info info)
 				}
 				if (idx == 0)
 				{
-					rev_rotate_b(stacks);
-					push_a(stacks);
+					rev_rotate_b(stacks, ft_true);
+					push_a(stacks, ft_true);
 					minfo.a--;
 				}
 				else if (idx == 1)
 				{
-					push_a(stacks);
+					push_a(stacks, ft_true);
 					minfo.b--;
 				}
 				else if (idx == 2)
 				{
-					rev_rotate_a(stacks);
+					rev_rotate_a(stacks, ft_true);
 					minfo.c--;
 				}
 			}
@@ -118,18 +118,18 @@ static void	merge_to_a(t_stacks *stacks, t_div_info info)
 				}
 				if (idx == 0)
 				{
-					rev_rotate_b(stacks);
-					push_a(stacks);
+					rev_rotate_b(stacks, ft_true);
+					push_a(stacks, ft_true);
 					minfo.a--;
 				}
 				else if (idx == 1)
 				{
-					push_a(stacks);
+					push_a(stacks, ft_true);
 					minfo.b--;
 				}
 				else if (idx == 2)
 				{
-					rev_rotate_a(stacks);
+					rev_rotate_a(stacks, ft_true);
 					minfo.c--;
 				}
 			}
@@ -147,7 +147,7 @@ static void	merge_to_b(t_stacks *stacks, t_div_info info)
 	i = 0;
 	while (i < pb)
 	{
-		push_b(stacks);
+		push_b(stacks, ft_true);
 		i++;
 	}
 	i = 0;
@@ -190,18 +190,18 @@ static void	merge_to_b(t_stacks *stacks, t_div_info info)
 				}
 				if (idx == 0)
 				{
-					rev_rotate_a(stacks);
-					push_b(stacks);
+					rev_rotate_a(stacks, ft_true);
+					push_b(stacks, ft_true);
 					minfo.a--;
 				}
 				else if (idx == 1)
 				{
-					push_b(stacks);
+					push_b(stacks, ft_true);
 					minfo.b--;
 				}
 				else if (idx == 2)
 				{
-					rev_rotate_b(stacks);
+					rev_rotate_b(stacks, ft_true);
 					minfo.c--;
 				}
 			}
@@ -235,18 +235,18 @@ static void	merge_to_b(t_stacks *stacks, t_div_info info)
 				}
 				if (idx == 0)
 				{
-					rev_rotate_a(stacks);
-					push_b(stacks);
+					rev_rotate_a(stacks, ft_true);
+					push_b(stacks, ft_true);
 					minfo.a--;
 				}
 				else if (idx == 1)
 				{
-					push_b(stacks);
+					push_b(stacks, ft_true);
 					minfo.b--;
 				}
 				else if (idx == 2)
 				{
-					rev_rotate_b(stacks);
+					rev_rotate_b(stacks, ft_true);
 					minfo.c--;
 				}
 			}
@@ -279,6 +279,6 @@ void	sort_stacks(t_stacks *stacks)
 	{
 		i = -1;
 		while (++i < stacks->num)
-			push_a(stacks);
+			push_a(stacks, ft_true);
 	}
 }

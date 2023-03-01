@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/01 13:39:24 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/01 13:57:27 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ RM = rm -rf
 
 SRCS = $(addprefix src/, \
 		command/push_a.c command/push_b.c \
+		command/repeat_cmd.c \
 		command/rev_rotate_a.c command/rev_rotate_ab.c command/rev_rotate_b.c\
 		command/rotate_a.c command/rotate_ab.c command/rotate_b.c \
 		command/swap_a.c command/swap_ab.c command/swap_b.c \

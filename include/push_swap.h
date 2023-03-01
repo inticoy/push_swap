@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:45:24 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 13:56:52 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_merge_info
 
 void			push_a(t_stacks *stacks, t_bool opt);
 void			push_b(t_stacks *stacks, t_bool opt);
+void			repeat_cmd(void (*f)(t_stacks *, t_bool), t_stacks *s, int n);
 void			rev_rotate_a(t_stacks *stacks, t_bool opt);
 void			rev_rotate_ab(t_stacks *stacks, t_bool opt);
 void			rev_rotate_b(t_stacks *stacks, t_bool opt);

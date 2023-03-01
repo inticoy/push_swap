@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:30:50 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:31:12 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 13:59:18 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,47 +20,43 @@ void	pre_sort_3(t_stacks *stacks, t_order order)
 
 	if (a1 > a2 && a2 > a3)					//3 2 1
 	{
-		push_b(stacks);
-		push_b(stacks);
-		push_b(stacks);
+		repeat_cmd(push_b, stacks, 3);
 	}
 	else if (a1 > a2 && a2 < a3 && a1 > a3)	//3 1 2
 	{
-		push_b(stacks);
-		push_b(stacks);
-		push_b(stacks);
-		swap_b(stacks);
+		repeat_cmd(push_b, stacks, 3);
+		swap_b(stacks, ft_true);
 	}
 	else if (a1 > a2 && a2 < a3 && a1 < a3)	//2 1 3
 	{
-		push_b(stacks);
-		swap_a(stacks);
-		push_b(stacks);
-		swap_b(stacks);
-		push_b(stacks);
+		push_b(stacks, ft_true);
+		swap_a(stacks, ft_true);
+		push_b(stacks, ft_true);
+		swap_b(stacks, ft_true);
+		push_b(stacks, ft_true);
 	}
 	else if (a1 < a2 && a2 > a3 && a1 > a3)	//2 3 1
 	{
-		push_b(stacks);
-		push_b(stacks);
-		swap_b(stacks);
-		push_b(stacks);
+		push_b(stacks, ft_true);
+		push_b(stacks, ft_true);
+		swap_b(stacks, ft_true);
+		push_b(stacks, ft_true);
 	}
 	else if (a1 < a2 && a2 > a3 && a1 < a3)	//1 3 2
 	{
-		push_b(stacks);
-		push_b(stacks);
-		swap_b(stacks);
-		push_b(stacks);
-		swap_b(stacks);
+		push_b(stacks, ft_true);
+		push_b(stacks, ft_true);
+		swap_b(stacks, ft_true);
+		push_b(stacks, ft_true);
+		swap_b(stacks, ft_true);
 	}
 	else if (a1 < a2 && a2 < a3)			//1 2 3
 	{
-		swap_a(stacks);
-		push_b(stacks);
-		swap_a(stacks);
-		push_b(stacks);
-		swap_b(stacks);
-		push_b(stacks);
+		swap_a(stacks, ft_true);
+		push_b(stacks, ft_true);
+		swap_a(stacks, ft_true);
+		push_b(stacks, ft_true);
+		swap_b(stacks, ft_true);
+		push_b(stacks, ft_true);
 	}
 }
