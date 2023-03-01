@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:14:30 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:43:18 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 21:26:10 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ void	push_a(t_stacks *stacks, t_bool opt)
 	if (opt)
 		ft_printf("pa\n");
 }
-
