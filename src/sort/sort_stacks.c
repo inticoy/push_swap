@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 19:49:54 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/01 20:12:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ void	sort_stacks(t_stacks *stacks)
 	if (stacks->num == 4)
 	{
 		sort_4(stacks, asc);
+		return ;
+	}
+	if (stacks->num == 5)
+	{
+		sort_5(stacks, asc);
 		return ;
 	}
 	info = get_div_info(ft_lstsize(stacks->a));
