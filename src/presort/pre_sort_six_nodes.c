@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pre_sort_6.c                                       :+:      :+:    :+:   */
+/*   pre_sort_six_nodes.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:23:35 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 21:30:13 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 22:38:57 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static t_bool	need_swap_b(t_stacks *stacks, t_order order)
 		return (ft_false);
 }
 
-void	pre_sort_6(t_stacks *stacks, t_order order)
+void	pre_sort_six_nodes(t_stacks *stacks, t_order order)
 {
 	t_merge_info	minfo;
 

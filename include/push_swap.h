@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 19:22:27 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 22:44:05 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,17 @@ void			merge_all_to_b(t_stacks *stacks, t_div_info info);
 void			merge_to_a(t_stacks *stacks, t_merge_info minfo);
 void			merge_to_b(t_stacks *stacks, t_merge_info minfo);
 
-void			pre_sort_2(t_stacks *stacks, t_order order);
-void			pre_sort_3(t_stacks *stacks, t_order order);
-void			pre_sort_4(t_stacks *stacks, t_order order);
-void			pre_sort_5(t_stacks *stacks, t_order order);
-void			pre_sort_6(t_stacks *stacks, t_order order);
+void			pre_sort_two_nodes(t_stacks *stacks, t_order order);
+void			pre_sort_three_nodes(t_stacks *stacks, t_order order);
+void			pre_sort_four_nodes(t_stacks *stacks, t_order order);
+void			pre_sort_five_nodes(t_stacks *stacks, t_order order);
+void			pre_sort_six_nodes(t_stacks *stacks, t_order order);
+void			pre_sort(t_stacks *stacks, t_div_info info);
 
 void			sort_two_nodes(t_stacks *stacks, t_order order);
 void			sort_three_nodes(t_stacks *stacks, t_order order);
 void			sort_four_nodes(t_stacks *stacks, t_order order);
 void			sort_five_nodes(t_stacks *stacks, t_order order);
-void			preprocess(t_stacks *stacks, t_div_info info);
 void			sort_stacks(t_stacks *stacks, t_div_info *dinfo);
 
 int				get_a_bot(t_stacks *stacks);

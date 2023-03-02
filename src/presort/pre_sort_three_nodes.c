@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pre_sort_3.c                                       :+:      :+:    :+:   */
+/*   pre_sort_three_nodes.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:30:50 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 15:46:48 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 22:38:29 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	pre_sort_231(t_stacks *stacks)
 	push_b(stacks, ft_true);
 }
 
-void	pre_sort_3(t_stacks *stacks, t_order order)
+void	pre_sort_three_nodes(t_stacks *stacks, t_order order)
 {
 	const int	a1 = *(int *)stacks->a->content * order;
 	const int	a2 = *(int *)stacks->a->next->content * order;

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pre_sort_4.c                                       :+:      :+:    :+:   */
+/*   pre_sort_four_nodes.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:32:31 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 21:30:01 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 22:38:42 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pre_sort_4(t_stacks *stacks, t_order order)
+void	pre_sort_four_nodes(t_stacks *stacks, t_order order)
 {
 	t_merge_info	minfo;
 
