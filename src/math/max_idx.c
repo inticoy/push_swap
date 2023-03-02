@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max_3.c                                            :+:      :+:    :+:   */
+/*   max_idx.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 13:37:56 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:38:48 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/25 18:10:57 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/02 22:52:41 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmath.h"
 
-int	max_3(int a, int b, int c)
+int	max_idx(int a, int b)
 {
 	if (a > b)
-	{
-		if (a > c)
-			return (0);
-		else
-			return (2);
-	}
+		return (0);
+	else if (a < b)
+		return (1);
 	else
-		return (1 + max_i(b, c));
+		return (-1);
 }

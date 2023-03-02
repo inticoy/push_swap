@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_3.c                                            :+:      :+:    :+:   */
+/*   min_idx.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 13:38:36 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 13:38:45 by gyoon            ###   ########.fr       */
+/*   Created: 2023/02/25 18:28:49 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/02 22:53:07 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmath.h"
 
-int	min_3(int a, int b, int c)
+int	min_idx_three(int a, int b)
 {
 	if (a < b)
-	{
-		if (a < c)
-			return (0);
-		else
-			return (2);
-	}
+		return (0);
+	else if (a > b)
+		return (1);
 	else
-		return (1 + min_i(b, c));
+		return (-1);
 }
