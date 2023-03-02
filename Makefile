@@ -6,16 +6,16 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/02 14:48:20 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/02 16:27:56 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 CC = cc
-RM = rm -rf
+CFLAGS = -Wall -Wextra -Werror
 
-# CFLAGS = -Wall -Wextra -Werror
+RM = rm -rf
 
 SRCS = $(addprefix src/, \
 		cmd/push_a.c cmd/push_b.c \
@@ -53,7 +53,7 @@ endif
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(F_OBJS)
-	$(CC) -Wall -Wextra -Werror -L./libft $(SRCS) -lft -I $(INCLUDE) -o $@ -fsanitize=address
+	$(CC) $(CFLAGS) -L./libft $(SRCS) -lft -I $(INCLUDE) -o $@
 
 bonus :
 	make BONUS=1 all
