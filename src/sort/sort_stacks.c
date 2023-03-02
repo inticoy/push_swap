@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 19:23:15 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 22:44:22 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	sort_stacks(t_stacks *stacks, t_div_info *dinfo)
 	num_conquer = dinfo->level;
 	if (dinfo->level % 2 == 0)
 		reverse_orders(dinfo->orders, dinfo->part);
-	preprocess(stacks, *dinfo);
+	pre_sort(stacks, *dinfo);
 	while (++i < num_conquer)
 	{
 		if (i % 2 == 0)
