@@ -16,13 +16,13 @@
 static void	sort_2345(t_stacks *stacks)
 {
 	if (stacks->num == 2)
-		sort_2(stacks, asc);
+		sort_two_nodes(stacks, asc);
 	else if (stacks->num == 3)
-		sort_3(stacks, asc);
+		sort_three_nodes(stacks, asc);
 	else if (stacks->num == 4)
-		sort_4(stacks, asc);
+		sort_four_nodes(stacks, asc);
 	else if (stacks->num == 5)
-		sort_5(stacks, asc);
+		sort_five_nodes(stacks, asc);
 	return ;
 }
 

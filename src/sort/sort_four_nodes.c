@@ -34,7 +34,7 @@ static t_bool	need_swap_b(t_stacks *stacks)
 		return (ft_false);
 }
 
-void	sort_4(t_stacks *stacks, t_order order)
+void	sort_four_nodes(t_stacks *stacks, t_order order)
 {
 	t_merge_info	minfo;
 	t_bool			sa;

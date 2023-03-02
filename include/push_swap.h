@@ -78,10 +78,10 @@ void			pre_sort_4(t_stacks *stacks, t_order order);
 void			pre_sort_5(t_stacks *stacks, t_order order);
 void			pre_sort_6(t_stacks *stacks, t_order order);
 
-void			sort_2(t_stacks *stacks, t_order order);
-void			sort_3(t_stacks *stacks, t_order order);
-void			sort_4(t_stacks *stacks, t_order order);
-void			sort_5(t_stacks *stacks, t_order order);
+void			sort_two_nodes(t_stacks *stacks, t_order order);
+void			sort_three_nodes(t_stacks *stacks, t_order order);
+void			sort_four_nodes(t_stacks *stacks, t_order order);
+void			sort_five_nodes(t_stacks *stacks, t_order order);
 void			preprocess(t_stacks *stacks, t_div_info info);
 void			sort_stacks(t_stacks *stacks, t_div_info *dinfo);
 

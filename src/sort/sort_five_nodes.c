@@ -23,7 +23,7 @@ static t_bool	need_swap_b(t_stacks *stacks)
 		return (ft_false);
 }
 
-void	sort_5(t_stacks *stacks, t_order order)
+void	sort_five_nodes(t_stacks *stacks, t_order order)
 {
 	t_merge_info	minfo;
 
@@ -32,7 +32,7 @@ void	sort_5(t_stacks *stacks, t_order order)
 	minfo.c = 3;
 	minfo.order = order;
 	repeat_cmd(push_b, stacks, ft_true, 2);
-	sort_3(stacks, asc);
+	sort_three_nodes(stacks, asc);
 	if (need_swap_b(stacks))
 		swap_b(stacks, ft_true);
 	merge_to_a(stacks, minfo);
