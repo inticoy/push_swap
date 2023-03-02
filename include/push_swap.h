@@ -65,7 +65,7 @@ void			raise_error(char *msg);
 
 void			print_orders(t_order *orders, int len);
 void			reverse_orders(t_order *orders, int len);
-t_order			*set_order(int part, int level);
+t_order			*set_orders(int part, int level);
 
 void			merge_all_to_a(t_stacks *stacks, t_div_info info);
 void			merge_all_to_b(t_stacks *stacks, t_div_info info);

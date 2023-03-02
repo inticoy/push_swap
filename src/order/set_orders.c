@@ -14,7 +14,7 @@
 #include "libmath.h"
 #include "push_swap.h"
 
-t_order	*set_order(int part, int level)
+t_order	*set_orders(int part, int level)
 {
 	t_order	*order;
 	int		i;
