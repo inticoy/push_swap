@@ -35,6 +35,6 @@ t_div_info	get_div_info(int size)
 		info.elements[i++] = q;
 	while (i < info.part)
 		info.elements[i++] = q + 1;
-	info.orders = set_order(info.part, info.level);
+	info.orders = set_orders(info.part, info.level);
 	return (info);
 }
