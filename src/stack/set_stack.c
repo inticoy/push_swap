@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_stack_a.c                                      :+:      :+:    :+:   */
+/*   set_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:27:01 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/21 19:33:58 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 13:56:51 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,23 @@ static char	*skip_digits(char *str)
 	return (str);
 }
 
-static void	test(t_list **head, char *arg)
+static void	add_node(t_list **head, char *arg)
 {
 	int		*content;
-	t_list	*node;
 	int		number;
 	char	*str;
+	t_list	*node;
 
-	content = ft_calloc(1, sizeof(int));
+	content = (int *)ft_calloc(1, sizeof(int));
+	if (!content)
+		ft_lstclear(head, ft_free_s);
 	number = ft_atoi(arg);
 	*content = number;
 	node = ft_lstnew(content);
 	str = ft_itoa(number);
-	if (!ft_strncmp(arg, str, ft_strlen(str)))
+	if (!str)
+		ft_lstclear(head, ft_free_s);
+	else if (!ft_strncmp(arg, str, ft_strlen(str)))
 		ft_lstadd_back(head, node);
 	else
 		ft_lstclear(head, ft_free_s);
@@ -56,7 +60,7 @@ static t_list	*argv_to_nodes(char *arg)
 			arg++;
 			continue ;
 		}
-		test(&head, arg);
+		add_node(&head, arg);
 		if (!head)
 			return (FT_NULL);
 		arg = skip_digits(arg);
@@ -69,7 +73,7 @@ static t_list	*argv_to_nodes(char *arg)
 	return (head);
 }
 
-t_list	*set_stack_a(int argc, char **argv)
+t_list	*set_stack(int argc, char **argv)
 {
 	int		i;
 	t_list	*head;

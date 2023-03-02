@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:54:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 21:34:56 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 14:02:31 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_stacks	set_stacks(int argc, char **argv)
 	t_stacks	stacks;
 
 	stacks = init_stacks();
-	stacks.a = set_stack_a(argc, argv);
+	stacks.a = set_stack(argc, argv);
 	if (has_duplication(stacks.a))
 		ft_lstclear(&stacks.a, ft_free_s);
 	stacks.b = FT_NULL;
