@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:15 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 22:19:31 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 14:02:19 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
-
-t_order	*set_order(int part, int level);
-void	get_section(int size);
 
 int	main(int argc, char **argv)
 {
@@ -28,5 +24,9 @@ int	main(int argc, char **argv)
 		raise_error("Error\n");
 	dinfo = get_div_info(stacks.num);
 	sort_stacks(&stacks, &dinfo);
+	ft_lstclear(&stacks.a, ft_free_s);
+	ft_lstclear(&stacks.b, ft_free_s);
+	ft_free_s(dinfo.elements);
+	ft_free_s(dinfo.orders);
 	return (0);
 }

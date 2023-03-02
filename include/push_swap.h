@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/01 22:18:02 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 13:57:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,7 @@ int				get_a_bottom(t_stacks *stacks);
 int				get_b_bottom(t_stacks *stacks);
 t_stacks		init_stacks(void);
 void			print_stacks(t_stacks stacks);
-t_list			*set_stack_a(int argc, char **argv);
-t_list			*set_stack_b(int size);
+t_list			*set_stack(int argc, char **argv);
 t_stacks		set_stacks(int argc, char **argv);
 
 int				arr_sum(int *elements, int len);

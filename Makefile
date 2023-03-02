@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+         #
+#    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/01 22:12:24 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/02 13:57:32 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRCS = $(addprefix src/, \
 		sort/sort_2.c sort/sort_3.c sort/sort_4.c sort/sort_5.c \
 		sort/preprocess.c sort/sort_stacks.c \
 		stack/get_a_bottom.c stack/get_a_top.c stack/get_b_bottom.c stack/get_b_top.c \
-		stack/init_stacks.c stack/print_stacks.c stack/set_stack_a.c stack/set_stacks.c \
+		stack/init_stacks.c stack/print_stacks.c stack/set_stack.c stack/set_stacks.c \
 		util/arr_sum.c \
 		main.c)
 OBJS = $(SRCS:.c=.o)
