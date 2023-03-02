@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "push_swap.h"
-#include <unistd.h>
 #include <stdlib.h>
 
 void	raise_error(char *msg)

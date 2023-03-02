@@ -25,6 +25,13 @@
 #  define BUFFER_SIZE 42
 # endif
 
+enum e_file_descriptor
+{
+	STDIN = 0,
+	STDOUT = 1,
+	STDERR = 2
+};
+
 typedef struct s_buffer	t_buffer;
 
 typedef struct s_list

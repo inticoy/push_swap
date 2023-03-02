@@ -15,13 +15,6 @@
 
 # include "libft.h"
 
-typedef enum e_file_descriptor
-{
-	STDIN = 0,
-	STDOUT = 1,
-	STDERR = 2
-}	t_file_descriptor;
-
 typedef enum e_order
 {
 	desc = -1,
