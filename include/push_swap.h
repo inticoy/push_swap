@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 16:48:12 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 19:22:27 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ int				get_a_top(t_stacks *stacks);
 int				get_b_top(t_stacks *stacks);
 int				get_b_bot(t_stacks *stacks);
 t_stacks		init_stacks(void);
+t_bool			is_sorted(t_stacks *stacks);
 void			print_stacks(t_stacks stacks);
 t_list			*set_stack(int argc, char **argv);
 t_stacks		set_stacks(int argc, char **argv);

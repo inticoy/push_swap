@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 14:07:46 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 19:23:15 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	sort_stacks(t_stacks *stacks, t_div_info *dinfo)
 	int			i;
 	int			num_conquer;
 
+	if (is_sorted(stacks))
+		return ;
 	if (2 <= stacks->num && stacks->num <= 5)
 	{
 		sort_2345(stacks);
