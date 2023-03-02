@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 14:16:18 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/02 16:48:12 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 
 # include "libft.h"
 
-# define STDERR 2
+typedef enum e_file_descriptor
+{
+	STDIN = 0,
+	STDOUT = 1,
+	STDERR = 2
+}	t_file_descriptor;
 
 typedef enum e_order
 {
