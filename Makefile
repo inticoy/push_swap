@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/02 16:27:56 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/02 16:42:22 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = push_swap
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-
 RM = rm -rf
 
 SRCS = $(addprefix src/, \
@@ -35,20 +34,20 @@ SRCS = $(addprefix src/, \
 		stack/init_stacks.c stack/print_stacks.c stack/set_stack.c stack/set_stacks.c \
 		util/arr_sum.c \
 		main.c)
+SRCS_BONUS = $(addprefix src_bonus/, \
+			main.c)
+
 OBJS = $(SRCS:.c=.o)
-
-B_SRCS = ${SRCS:.c=_bonus.c}
-B_OBJS = ${OBJS:.o=_bonus.o}
-
-LIBFT = libft/libft.a
-
-INCLUDE = ./include
+OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
 ifdef BONUS
-    F_OBJS = $(B_OBJS)
+    F_OBJS = $(OBJS_BONUS)
 else
     F_OBJS = $(OBJS)
 endif
+
+INCLUDE = ./include
+LIBFT = libft/libft.a
 
 all : $(NAME)
 
