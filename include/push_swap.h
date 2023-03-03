@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/03 13:45:37 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 14:55:23 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,12 @@ void			raise_error(char *msg);
 void			print_orders(t_order *orders, int len);
 void			reverse_orders(t_order *orders, int len);
 t_order			*set_orders(int part, int level);
+
+int				max_idx_of_three(int a, int b, int c);
+int				max_idx(int a, int b);
+int				min_idx_of_three(int a, int b, int c);
+int				min_idx(int a, int b);
+int				power(int num, int exp);
 
 void			merge_all_to_a(t_stacks *stacks, t_div_info info);
 void			merge_all_to_b(t_stacks *stacks, t_div_info info);

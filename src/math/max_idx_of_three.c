@@ -6,11 +6,11 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:37:56 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/03 13:27:11 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 14:56:09 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libmath.h"
+#include "push_swap.h"
 
 int	max_idx_of_three(int a, int b, int c)
 {

@@ -6,11 +6,10 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:49:53 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/03 13:28:05 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 14:55:31 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libmath.h"
 #include "push_swap.h"
 
 static void	cmd_merge_to_a(t_stacks *stacks, t_merge_info *minfo, int idx)

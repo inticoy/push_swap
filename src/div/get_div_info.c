@@ -6,11 +6,10 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:11:16 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/25 19:10:43 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 14:54:01 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libmath.h"
 #include "push_swap.h"
 
 t_div_info	get_div_info(int size)
