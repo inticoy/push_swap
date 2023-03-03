@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:41:22 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/03 15:27:25 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 16:49:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct s_merge_info
 	int		c;
 	t_order	order;
 }	t_merge_info;
+
+int				check_stacks(t_stacks *stacks);
 
 void			push_a(t_stacks *stacks, t_bool opt);
 void			push_b(t_stacks *stacks, t_bool opt);

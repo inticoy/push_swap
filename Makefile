@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/03 15:32:10 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/03 16:40:28 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRCS 			= $(addprefix src/, 	$(SRCS_CMD)		\
 										$(SRCS_UTIL)	\
 										$(SRCS_MAIN))
 
+SRCS_CHECK_BONUS	= $(addprefix check/, check_stacks.c)
 SRCS_CMD_BONUS		= $(SRCS_CMD:.c=_bonus.c)
 SRCS_DIV_BONUS		= $(SRCS_DIV:.c=_bonus.c)
 SRCS_ERROR_BONUS	= $(SRCS_ERROR:.c=_bonus.c)
@@ -51,7 +52,8 @@ SRCS_SORT_BONUS		= $(SRCS_SORT:.c=_bonus.c)
 SRCS_STACK_BONUS	= $(SRCS_STACK:.c=_bonus.c)
 SRCS_UTIL_BONUS		= $(SRCS_UTIL:.c=_bonus.c)
 SRCS_MAIN_BONUS		= $(SRCS_MAIN:.c=_bonus.c)
-SRCS_BONUS 			= $(addprefix src_bonus/, 	$(SRCS_CMD_BONUS)		\
+SRCS_BONUS 			= $(addprefix src_bonus/, 	$(SRCS_CHECK_BONUS)		\
+												$(SRCS_CMD_BONUS)		\
 												$(SRCS_DIV_BONUS)		\
 												$(SRCS_ERROR_BONUS)		\
 												$(SRCS_MATH_BONUS) 		\
