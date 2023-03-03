@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:27:01 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 13:56:51 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 14:22:09 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static char	*skip_digits(char *str)
 {
-	if (*str == '-')
+	if (*str == '+' || *str == '-')
 		str++;
 	while ('0' <= *str && *str <= '9')
 		str++;
@@ -26,20 +26,23 @@ static char	*skip_digits(char *str)
 static void	add_node(t_list **head, char *arg)
 {
 	int		*content;
-	int		number;
 	char	*str;
 	t_list	*node;
 
 	content = (int *)ft_calloc(1, sizeof(int));
 	if (!content)
 		ft_lstclear(head, ft_free_s);
-	number = ft_atoi(arg);
-	*content = number;
+	*content = ft_atoi(arg);
 	node = ft_lstnew(content);
-	str = ft_itoa(number);
+	str = ft_itoa(*content);
 	if (!str)
 		ft_lstclear(head, ft_free_s);
-	else if (!ft_strncmp(arg, str, ft_strlen(str)))
+	else if (*arg == '+' && !ft_strncmp(arg + 1, str, ft_strlen(str)))
+		ft_lstadd_back(head, node);
+	else if (*arg != '+' && !ft_strncmp(arg, str, ft_strlen(str)))
+		ft_lstadd_back(head, node);
+	else if (*arg == '-' && !ft_strncmp(arg + 1, str, ft_strlen(str)) \
+			&& !*content)
 		ft_lstadd_back(head, node);
 	else
 		ft_lstclear(head, ft_free_s);
