@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:37:56 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 22:52:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 13:27:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	max_idx_of_three(int a, int b, int c)
 			return (2);
 	}
 	else
-		return (1 + max_i(b, c));
+		return (1 + max_idx(b, c));
 }

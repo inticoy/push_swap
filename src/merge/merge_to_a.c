@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:49:53 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 15:08:57 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 13:28:05 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,13 @@ void	merge_to_a(t_stacks *stacks, t_merge_info minfo)
 	else if (minfo.a && minfo.b && minfo.c)
 	{
 		if (minfo.order > 0)
-			idx = max_3(get_b_bot(stacks), \
-						get_b_top(stacks), \
-						get_a_bot(stacks));
+			idx = max_idx_of_three(get_b_bot(stacks), \
+									get_b_top(stacks), \
+									get_a_bot(stacks));
 		else
-			idx = min_3(get_b_bot(stacks), \
-						get_b_top(stacks), \
-						get_a_bot(stacks));
+			idx = min_idx_of_three(get_b_bot(stacks), \
+									get_b_top(stacks), \
+									get_a_bot(stacks));
 	}
 	else
 		idx = get_index(stacks, minfo);

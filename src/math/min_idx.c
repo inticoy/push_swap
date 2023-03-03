@@ -6,13 +6,13 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:28:49 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 22:53:07 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 13:29:07 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmath.h"
 
-int	min_idx_three(int a, int b)
+int	min_idx(int a, int b)
 {
 	if (a < b)
 		return (0);
