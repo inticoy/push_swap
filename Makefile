@@ -6,11 +6,12 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 15:33:33 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/03 14:54:57 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/03 16:40:28 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+NAME_BONUS = checker
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -27,31 +28,58 @@ SRCS_SORT		= $(addprefix sort/,	sort_five_nodes.c sort_four_nodes.c sort_stacks.
 SRCS_STACK		= $(addprefix stack/,	get_a_bot.c get_a_top.c get_b_bot.c get_b_top.c init_stacks.c is_sorted.c print_stacks.c set_stack.c set_stacks.c)
 SRCS_UTIL		= $(addprefix util/,	arr_sum.c)
 SRCS_MAIN		= main.c
-SRCS = $(addprefix src/, 	$(SRCS_CMD)		$(SRCS_DIV)		$(SRCS_ERROR)	\
-							$(SRCS_MATH) 	$(SRCS_MERGE)	$(SRCS_ORDER)	\
-							$(SRCS_PRESORT)	$(SRCS_SORT)	$(SRCS_STACK)	\
-							$(SRCS_UTIL)	$(SRCS_MAIN))
-SRCS_BONUS = $(addprefix src_bonus/, main.c)
+SRCS 			= $(addprefix src/, 	$(SRCS_CMD)		\
+										$(SRCS_DIV)		\
+										$(SRCS_ERROR)	\
+										$(SRCS_MATH) 	\
+										$(SRCS_MERGE)	\
+										$(SRCS_ORDER)	\
+										$(SRCS_PRESORT)	\
+										$(SRCS_SORT)	\
+										$(SRCS_STACK)	\
+										$(SRCS_UTIL)	\
+										$(SRCS_MAIN))
+
+SRCS_CHECK_BONUS	= $(addprefix check/, check_stacks.c)
+SRCS_CMD_BONUS		= $(SRCS_CMD:.c=_bonus.c)
+SRCS_DIV_BONUS		= $(SRCS_DIV:.c=_bonus.c)
+SRCS_ERROR_BONUS	= $(SRCS_ERROR:.c=_bonus.c)
+SRCS_MATH_BONUS		= $(SRCS_MATH:.c=_bonus.c)
+SRCS_MERGE_BONUS	= $(SRCS_MERGE:.c=_bonus.c)
+SRCS_ORDER_BONUS	= $(SRCS_ORDER:.c=_bonus.c)
+SRCS_PRESORT_BONUS	= $(SRCS_PRESORT:.c=_bonus.c)
+SRCS_SORT_BONUS		= $(SRCS_SORT:.c=_bonus.c)
+SRCS_STACK_BONUS	= $(SRCS_STACK:.c=_bonus.c)
+SRCS_UTIL_BONUS		= $(SRCS_UTIL:.c=_bonus.c)
+SRCS_MAIN_BONUS		= $(SRCS_MAIN:.c=_bonus.c)
+SRCS_BONUS 			= $(addprefix src_bonus/, 	$(SRCS_CHECK_BONUS)		\
+												$(SRCS_CMD_BONUS)		\
+												$(SRCS_DIV_BONUS)		\
+												$(SRCS_ERROR_BONUS)		\
+												$(SRCS_MATH_BONUS) 		\
+												$(SRCS_MERGE_BONUS)		\
+												$(SRCS_ORDER_BONUS)		\
+												$(SRCS_PRESORT_BONUS)	\
+												$(SRCS_SORT_BONUS)		\
+												$(SRCS_STACK_BONUS)		\
+												$(SRCS_UTIL_BONUS)		\
+												$(SRCS_MAIN_BONUS))
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
-
-ifdef BONUS
-    F_OBJS = $(OBJS_BONUS)
-else
-    F_OBJS = $(OBJS)
-endif
 
 INCLUDE = ./include
 LIBFT = libft/libft.a
 
 all : $(NAME)
 
-$(NAME) : $(LIBFT) $(F_OBJS)
-	$(CC) $(CFLAGS) -L./libft $(SRCS) -lft -I $(INCLUDE) -o $@
+bonus : $(NAME_BONUS)
 
-bonus :
-	make BONUS=1 all
+$(NAME)	: $(LIBFT) $(OBJS)
+	$(CC) $(CFLAGS) -L./libft $(OBJS) -lft -I $(INCLUDE) -o $@
+
+$(NAME_BONUS) : $(LIBFT) $(OBJS_BONUS)
+	$(CC) $(CFLAGS) -L./libft $(OBJS_BONUS) -lft -I $(INCLUDE) -o $@
 
 $(LIBFT) :
 	make -C libft
@@ -61,12 +89,13 @@ $(LIBFT) :
 
 clean :
 	$(RM) $(OBJS)
-	$(RM) $(B_OBJS)
+	$(RM) $(OBJS_BONUS)
 	make -C libft clean
 
 fclean :
 	make clean
 	$(RM) $(NAME)
+	$(RM) $(NAME_BONUS)
 	make -C libft fclean
 
 re :
