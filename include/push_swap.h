@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:31:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 22:44:05 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 13:45:37 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void			swap_b(t_stacks *stacks, t_bool opt);
 void			swap_ab(t_stacks *stacks, t_bool opt);
 
 t_div_info		get_div_info(int size);
-t_div_info		update_div_info(t_div_info old);
+void			update_div_info(t_div_info *info);
 
 void			raise_error(char *msg);
 

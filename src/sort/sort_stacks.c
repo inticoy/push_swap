@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:54:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/02 22:44:22 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/03 13:48:13 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	sort_stacks(t_stacks *stacks, t_div_info *dinfo)
 			merge_all_to_a(stacks, *dinfo);
 		else
 			merge_all_to_b(stacks, *dinfo);
-		*dinfo = update_div_info(*dinfo);
+		update_div_info(dinfo);
 	}
 	if (num_conquer % 2 == 0)
 		repeat_cmd(push_a, stacks, ft_true, stacks->num);
